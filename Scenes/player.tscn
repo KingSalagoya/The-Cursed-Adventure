@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvbpkfbcjyfhy"]
+[gd_scene load_steps=9 format=3 uid="uid://dvbpkfbcjyfhy"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cnem4wkkl5nf2" path="res://Assets/Sprites/player tile.png" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://dpsdn1w8rc6kd" path="res://Scripts/Skills/shadow_step.gd" id="3_6t5aa"]
-[ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="4_8erm5"]
 [ext_resource type="Script" uid="uid://j1otkqps366m" path="res://Scripts/Skills/high_leap.gd" id="4_x3wgy"]
 [ext_resource type="Script" uid="uid://2tef4qdjsvd4" path="res://Scripts/Skills/fade.gd" id="5_3smsa"]
 [ext_resource type="Script" uid="uid://drbeth874l5c5" path="res://Scripts/Skills/quick_slash.gd" id="6_8erm5"]
@@ -27,11 +26,6 @@ shape = SubResource("RectangleShape2D_v0iea")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v0iea")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_enabled = false
-position_smoothing_enabled = true
-script = ExtResource("4_8erm5")
 
 [node name="Skills" type="Node" parent="."]
 

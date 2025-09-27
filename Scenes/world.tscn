@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=4 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://ch23g0uo2ydvd" path="res://Scenes/test_lvl.tscn" id="1_go701"]
+[ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="3_5a7ea"]
 
 [node name="World" type="Node"]
 
@@ -28,6 +29,9 @@ render_target_update_mode = 4
 [node name="Player" type="Node" parent="GameWorld/SubViewport"]
 
 [node name="Player" parent="GameWorld/SubViewport/Player" instance=ExtResource("1_a02cp")]
+
+[node name="Camera2D" type="Camera2D" parent="GameWorld/SubViewport/Player/Player"]
+script = ExtResource("3_5a7ea")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
