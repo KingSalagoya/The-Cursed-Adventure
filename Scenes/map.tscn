@@ -1272,6 +1272,7 @@ sources/0 = SubResource("TileSetAtlasSource_48rch")
 sources/1 = SubResource("TileSetAtlasSource_26yhd")
 sources/2 = SubResource("TileSetAtlasSource_myvm1")
 
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p3ir5"]
 load_path = "res://.godot/imported/sample tile.png-6acaee81489a931a45d5307b868eca3a.ctex"
 

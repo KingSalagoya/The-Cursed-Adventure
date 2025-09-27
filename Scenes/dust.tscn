@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://kmnmd6soaodc"]
+
+[ext_resource type="Texture2D" uid="uid://bgmmo467wb14d" path="res://Assets/Sprites/dust/dust1.png" id="1_xv1wt"]
+[ext_resource type="Texture2D" uid="uid://7p4wmdk1l6me" path="res://Assets/Sprites/dust/dust2.png" id="2_v4jyb"]
+[ext_resource type="Texture2D" uid="uid://yj1p7ce7v61x" path="res://Assets/Sprites/dust/dust3.png" id="3_ge4kt"]
+[ext_resource type="Texture2D" uid="uid://6tn4l77uc07l" path="res://Assets/Sprites/dust/dust4.png" id="4_25ewe"]
+[ext_resource type="Script" uid="uid://cr53qr78sr8rg" path="res://Scripts/dust.gd" id="5_woo0b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yalkc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xv1wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v4jyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ge4kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_25ewe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="dust" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_yalkc")
+autoplay = "default"
+script = ExtResource("5_woo0b")
