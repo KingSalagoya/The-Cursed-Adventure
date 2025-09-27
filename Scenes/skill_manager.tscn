@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqgen808voedd"]
+[gd_scene load_steps=2 format=3 uid="uid://bqgen808voedd"]
 
-[ext_resource type="Script" uid="uid://cbu8ki36i8dei" path="res://Scripts/skill_manager.gd" id="1_5gm8n"]
-[ext_resource type="Script" uid="uid://dpsdn1w8rc6kd" path="res://Scripts/shadow_step.gd" id="2_fjo6d"]
+[ext_resource type="Script" uid="uid://dpsdn1w8rc6kd" path="res://Scripts/Skills/shadow_step.gd" id="2_fjo6d"]
 
 [node name="SkillManager" type="Node"]
-script = ExtResource("1_5gm8n")
 
 [node name="ShadowStep" type="Node" parent="."]
 script = ExtResource("2_fjo6d")

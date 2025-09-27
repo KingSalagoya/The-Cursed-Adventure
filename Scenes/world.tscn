@@ -1,10 +1,33 @@
-[gd_scene format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=3 format=3 uid="uid://bj5xm3ygm2bw3"]
+
+[ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://ch23g0uo2ydvd" path="res://Scenes/test_lvl.tscn" id="1_go701"]
 
 [node name="World" type="Node"]
 
-[node name="Scenes" type="Node" parent="."]
+[node name="GameWorld" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
 
-[node name="Player" type="Node" parent="."]
+[node name="SubViewport" type="SubViewport" parent="GameWorld"]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(660, 360)
+render_target_update_mode = 4
+
+[node name="Scenes" type="Node" parent="GameWorld/SubViewport"]
+
+[node name="TestLvl" parent="GameWorld/SubViewport/Scenes" instance=ExtResource("1_go701")]
+
+[node name="Player" type="Node" parent="GameWorld/SubViewport"]
+
+[node name="Player" parent="GameWorld/SubViewport/Player" instance=ExtResource("1_a02cp")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
