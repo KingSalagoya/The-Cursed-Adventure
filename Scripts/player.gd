@@ -7,6 +7,7 @@ class_name Player extends CharacterBody2D
 
 @onready var graphics: Sprite2D = $Graphics
 
+var dir                     := 0.0
 
 func _physics_process(_delta: float) -> void:
 	_handle_jump()
@@ -19,6 +20,7 @@ func _handle_movement() -> void:
 	var direction           := Input.get_axis("left", "right")
 	velocity.x = direction * SPEED
 	if direction:
+		dir = direction
 		_update_orientation(direction * -1)
 
 
