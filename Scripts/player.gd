@@ -1,11 +1,11 @@
 class_name Player extends CharacterBody2D
 
-@export var SPEED           := 200.0
-@export var JUMP_VELOCITY   := 250.0
+@export var SPEED           := 250.0
+@export var JUMP_VELOCITY   := 400.0
 @export var MAX_HEALTH      := 5
-@export var GRAVITY         := 9.8
+@export var GRAVITY         := 19.6
 
-@onready var graphics: Sprite2D = $Graphics
+@onready var graphics: AnimatedSprite2D = $Graphics
 
 var dir                     := 0.0
 var dash_velocity           := 0.0
@@ -14,7 +14,7 @@ var jump_countdown          := false
 func _physics_process(_delta: float) -> void:
 	_handle_jump()
 	_handle_movement()
-	#_play_animations()
+	_play_animations()
 	move_and_slide()
 
 
@@ -24,7 +24,7 @@ func _handle_movement() -> void:
 	if direction:
 		dir = direction
 		velocity.x = direction * (SPEED + dash_velocity)
-		_update_orientation(direction * -1)
+		_update_orientation(direction)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -46,4 +46,8 @@ func _update_orientation(_dir: float) -> void:
 
 func _play_animations() -> void:
 	if velocity.x == 0:  graphics.play("idle", 0.5)
-	else:  graphics.play("walk")
+	else:  graphics.play("run")
+
+
+func take_damage() -> void:
+	global_position = GameManager.latest_check_point
