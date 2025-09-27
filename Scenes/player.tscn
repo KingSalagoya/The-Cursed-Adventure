@@ -26,18 +26,22 @@ drag_vertical_enabled = true
 
 [node name="Skills" type="Node" parent="."]
 
-[node name="ShadowStep" type="Node" parent="Skills"]
+[node name="ShadowStep" type="Node" parent="Skills" node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("3_6t5aa")
+PLAYER = NodePath("../..")
 metadata/_custom_type_script = "uid://dpsdn1w8rc6kd"
 
-[node name="HighLeap" type="Node" parent="Skills"]
+[node name="HighLeap" type="Node" parent="Skills" node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("4_x3wgy")
+PLAYER = NodePath("../..")
 metadata/_custom_type_script = "uid://dpsdn1w8rc6kd"
 
-[node name="Fade" type="Node" parent="Skills"]
+[node name="Fade" type="Node" parent="Skills" node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("5_3smsa")
+PLAYER = NodePath("../..")
 metadata/_custom_type_script = "uid://dpsdn1w8rc6kd"
 
-[node name="QuickSlash" type="Node" parent="Skills"]
+[node name="QuickSlash" type="Node" parent="Skills" node_paths=PackedStringArray("PLAYER")]
 script = ExtResource("6_8erm5")
+PLAYER = NodePath("../..")
 metadata/_custom_type_script = "uid://dpsdn1w8rc6kd"
