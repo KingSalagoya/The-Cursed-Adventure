@@ -70,16 +70,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0iea"]
-size = Vector2(16, 32)
+size = Vector2(10, 26)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
 
 [node name="Graphics" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_7dp3o")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.49138412
+frame_progress = 0.89863855
 
 [node name="HurtBox" type="Area2D" parent="."]
 script = ExtResource("7_3smsa")
