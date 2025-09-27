@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch23g0uo2ydvd"]
+
+[ext_resource type="Texture2D" uid="uid://1rxs74wlc3tq" path="res://Assets/Sprites/sample tile.png" id="1_r7ls1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5cvaf"]
+
+[node name="TestLvl" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 145)
+shape = SubResource("WorldBoundaryShape2D_5cvaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 154)
+scale = Vector2(44.560005, 1)
+texture = ExtResource("1_r7ls1")
