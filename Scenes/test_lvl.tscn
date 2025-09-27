@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch23g0uo2ydvd"]
 
-[ext_resource type="Texture2D" uid="uid://1rxs74wlc3tq" path="res://Assets/Sprites/sample tile.png" id="1_r7ls1"]
+[ext_resource type="Texture2D" uid="uid://bu2wltvby80nt" path="res://Assets/Sprites/sample tile.png" id="1_r7ls1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5cvaf"]
 
