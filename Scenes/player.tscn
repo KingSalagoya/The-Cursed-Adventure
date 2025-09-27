@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvbpkfbcjyfhy"]
+[gd_scene load_steps=17 format=3 uid="uid://dvbpkfbcjyfhy"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dfawaqcbs1q5l" path="res://Assets/Sprites/AnimationSheet_Character.png" id="2_3smsa"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://j1otkqps366m" path="res://Scripts/Skills/high_leap.gd" id="4_x3wgy"]
 [ext_resource type="Script" uid="uid://2tef4qdjsvd4" path="res://Scripts/Skills/fade.gd" id="5_3smsa"]
 [ext_resource type="Script" uid="uid://ujnufosymcdh" path="res://Scripts/hurt_box.gd" id="7_3smsa"]
+[ext_resource type="PackedScene" uid="uid://kmnmd6soaodc" path="res://Scenes/dust.tscn" id="8_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
 atlas = ExtResource("2_3smsa")
@@ -103,3 +104,9 @@ script = ExtResource("4_x3wgy")
 
 [node name="Fade" type="Node2D" parent="Skills"]
 script = ExtResource("5_3smsa")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 10)
+
+[node name="dust" parent="Marker2D" instance=ExtResource("8_8erm5")]
+position = Vector2(0, -8)
