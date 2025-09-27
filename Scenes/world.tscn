@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
-[ext_resource type="PackedScene" uid="uid://br21af5ua0t4s" path="res://Scenes/testlvlforskills.tscn" id="1_k7acu"]
+[ext_resource type="PackedScene" uid="uid://br21af5ua0t4s" path="res://Scenes/map.tscn" id="1_k7acu"]
 [ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="3_5a7ea"]
 [ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/skill_ui.gd" id="4_k7acu"]
 [ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/high leap.png" id="4_o06y3"]
@@ -29,13 +29,13 @@ render_target_update_mode = 4
 
 [node name="Scenes" type="Node" parent="GameWorld/SubViewport"]
 
-[node name="testlvlforskills" parent="GameWorld/SubViewport/Scenes" instance=ExtResource("1_k7acu")]
-position = Vector2(0, 161.33334)
+[node name="Map" parent="GameWorld/SubViewport/Scenes" instance=ExtResource("1_k7acu")]
+position = Vector2(0, 160)
 
 [node name="Player" type="Node" parent="GameWorld/SubViewport"]
 
 [node name="Player" parent="GameWorld/SubViewport/Player" instance=ExtResource("1_a02cp")]
-position = Vector2(0, -96.66667)
+position = Vector2(45.333336, 53.333336)
 
 [node name="Camera2D" type="Camera2D" parent="GameWorld/SubViewport/Player/Player"]
 script = ExtResource("3_5a7ea")
