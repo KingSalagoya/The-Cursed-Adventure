@@ -4,7 +4,7 @@ extends Area2D
 
 func _enter_tree() -> void:
 	collision_layer = 0
-	collision_mask = 8
+	collision_mask = 4
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
