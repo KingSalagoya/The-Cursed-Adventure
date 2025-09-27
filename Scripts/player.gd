@@ -10,15 +10,23 @@ class_name Player extends CharacterBody2D
 var dir                     := 0.0
 var dash_velocity           := 0.0
 var jump_countdown          := false
+var hud_toggle              := false
 
 func _physics_process(_delta: float) -> void:
+	#toggle_menu()
 	_handle_jump()
 	_handle_movement()
 	_play_animations()
 	move_and_slide()
 
+func toggle_menu() -> void:
+	if Input.is_action_just_pressed("open_hud"):
+		hud_toggle = !hud_toggle
+		GameManager._toggle_hud(hud_toggle)
+
 
 func _handle_movement() -> void:
+	if hud_toggle: return
 	var direction           := Input.get_axis("left", "right")
 	
 	if direction:
@@ -31,7 +39,7 @@ func _handle_movement() -> void:
 
 func _handle_jump() -> void:
 	if not is_on_floor(): velocity += Vector2(0, GRAVITY)
-	elif Input.is_action_just_pressed("jump"):
+	elif Input.is_action_just_pressed("jump") and not hud_toggle:
 		jump_countdown = true
 		velocity.y = -JUMP_VELOCITY
 		var timer = get_tree().create_timer(0.1)
