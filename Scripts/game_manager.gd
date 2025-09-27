@@ -2,6 +2,7 @@ extends Node
 
 signal teleport_player
 signal change_scenes
+signal sacrifice_skill(name: String)
 
 func _ready() -> void:
 	print("hellow")

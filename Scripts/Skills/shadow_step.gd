@@ -8,12 +8,9 @@ class_name ShadowStep extends Skills
 var is_dashing              := false
 var tween                   : Tween
 
-func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("shadow step"):
-		use()
 
 func use() -> void:
-	if not is_dashing:
+	if not is_dashing and Input.is_action_just_pressed("shadow step"):
 		is_dashing = true
 		player.dash_velocity = DASH_SPEED
 		if tween: tween.stop()

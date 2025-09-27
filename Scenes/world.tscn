@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=9 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://ch23g0uo2ydvd" path="res://Scenes/test_lvl.tscn" id="1_go701"]
 [ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="3_5a7ea"]
+[ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/skill_ui.gd" id="4_k7acu"]
+[ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/high leap.png" id="4_o06y3"]
+[ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/shadow_step.png" id="5_k7acu"]
+[ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/fade.png" id="6_5v1tr"]
+[ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/slash.png" id="6_k7acu"]
 
 [node name="World" type="Node"]
 
@@ -40,3 +45,93 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HUD" type="CanvasLayer" parent="UI"]
+
+[node name="Main" type="Control" parent="UI/HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/HUD/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Control" type="Control" parent="UI/HUD/Main/MarginContainer"]
+layout_mode = 2
+
+[node name="SkillUI" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+script = ExtResource("4_k7acu")
+
+[node name="ShadowStep" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/SkillUI"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+texture_normal = ExtResource("5_k7acu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/SkillUI/ShadowStep"]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_k7acu")
+expand_mode = 1
+
+[node name="HighLeap" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/SkillUI"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_o06y3")
+stretch_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/SkillUI/HighLeap"]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_k7acu")
+expand_mode = 1
+
+[node name="Fade" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/SkillUI"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+texture_normal = ExtResource("6_5v1tr")
+stretch_mode = 0
+
+[node name="TextureRect3" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/SkillUI/Fade"]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_k7acu")
+expand_mode = 1
