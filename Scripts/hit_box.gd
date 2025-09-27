@@ -8,5 +8,5 @@ extends Area2D
 var camera: Camera2D
 
 func _enter_tree() -> void:
-	collision_layer = 8
+	collision_layer = 4
 	collision_mask = 0

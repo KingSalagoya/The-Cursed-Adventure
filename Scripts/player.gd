@@ -1,13 +1,15 @@
 class_name Player extends CharacterBody2D
 
-@export var SPEED           := 100.0
-@export var JUMP_VELOCITY   := 150.0
+@export var SPEED           := 200.0
+@export var JUMP_VELOCITY   := 250.0
 @export var MAX_HEALTH      := 5
 @export var GRAVITY         := 9.8
 
 @onready var graphics: Sprite2D = $Graphics
 
 var dir                     := 0.0
+var dash_velocity           := 0.0
+var jump_countdown          := false
 
 func _physics_process(_delta: float) -> void:
 	_handle_jump()
@@ -18,19 +20,27 @@ func _physics_process(_delta: float) -> void:
 
 func _handle_movement() -> void:
 	var direction           := Input.get_axis("left", "right")
-	velocity.x = direction * SPEED
+	
 	if direction:
 		dir = direction
+		velocity.x = direction * (SPEED + dash_velocity)
 		_update_orientation(direction * -1)
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 
 func _handle_jump() -> void:
 	if not is_on_floor(): velocity += Vector2(0, GRAVITY)
-	elif Input.is_action_pressed("jump"): velocity.y = -JUMP_VELOCITY
+	elif Input.is_action_just_pressed("jump"):
+		jump_countdown = true
+		velocity.y = -JUMP_VELOCITY
+		var timer = get_tree().create_timer(0.1)
+		await(timer.timeout)
+		jump_countdown = false
 
 
-func _update_orientation(dir: float) -> void:
-	if dir < 0: graphics.flip_h = true
+func _update_orientation(_dir: float) -> void:
+	if _dir < 0: graphics.flip_h = true
 	else:  graphics.flip_h = false
 
 
