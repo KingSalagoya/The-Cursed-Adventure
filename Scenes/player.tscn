@@ -80,7 +80,7 @@ position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_7dp3o")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.89863855
+frame_progress = 0.6759706
 
 [node name="HurtBox" type="Area2D" parent="."]
 script = ExtResource("7_3smsa")
