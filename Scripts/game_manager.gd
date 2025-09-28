@@ -2,6 +2,7 @@ extends Node
 
 signal sacrifice_skill(name: String)
 signal toggle_hud(toggle: bool)
+signal win_sequence()
 
 var latest_check_point     := Vector2.ZERO
 
@@ -18,3 +19,7 @@ func update_latest_checkpoint(pos: Vector2) -> void:
 
 func _toggle_hud(toggle: bool) -> void:
 	toggle_hud.emit(toggle)
+
+func win_game() -> void:
+	_toggle_hud(true)
+	win_sequence.emit()
