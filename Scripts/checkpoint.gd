@@ -9,4 +9,5 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(_body) -> void:
-	GameManager.update_latest_checkpoint(global_position)
+	print(str(_body))
+	GameManager.update_latest_checkpoint(_body.global_position)

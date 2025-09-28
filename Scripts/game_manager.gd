@@ -13,6 +13,7 @@ func _physics_process(_delta: float) -> void:
 		get_tree().quit()
 
 func update_latest_checkpoint(pos: Vector2) -> void:
+	print("CHECKPOINT" + str(pos))
 	latest_check_point = pos
 
 func _toggle_hud(toggle: bool) -> void:

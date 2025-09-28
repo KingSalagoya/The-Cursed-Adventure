@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=13 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://cl4ppvto10j64" path="res://Scripts/world.gd" id="1_ikia7"]
 [ext_resource type="PackedScene" uid="uid://br21af5ua0t4s" path="res://Scenes/map.tscn" id="1_k7acu"]
+[ext_resource type="AudioStream" uid="uid://42vaoa6tub2j" path="res://Assets/Sounds/SacrificeAdventure_FULL_SONG_MusicGPT.mp3" id="2_7yui6"]
 [ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="3_5a7ea"]
 [ext_resource type="Script" uid="uid://dwevmyss2qvjo" path="res://Scripts/hud.gd" id="4_5v1tr"]
 [ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/skill_ui.gd" id="4_k7acu"]
@@ -12,6 +14,8 @@
 [ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
 
 [node name="World" type="Node"]
+script = ExtResource("1_ikia7")
+MUSIC = ExtResource("2_7yui6")
 
 [node name="GameWorld" type="SubViewportContainer" parent="."]
 anchors_preset = 15

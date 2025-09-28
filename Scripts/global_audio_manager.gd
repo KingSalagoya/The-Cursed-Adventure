@@ -1,7 +1,5 @@
 extends Node
 
-
-
 var music_audio_player_count         := 2
 var current_music_player             := 0
 
