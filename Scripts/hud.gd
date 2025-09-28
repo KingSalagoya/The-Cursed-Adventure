@@ -1,7 +1,14 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	GameManager.toggle_hud.connect(toggle_hud)
+	visible = true
+	GameManager.toggle_hud.emit(true)
 
-func toggle_hud(toggle: bool) -> void:
-	visible = toggle
+
+func _on_start_game_pressed() -> void:
+	GameManager.toggle_hud.emit(false)
+	visible = false
+
+
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()

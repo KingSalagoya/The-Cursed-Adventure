@@ -1,8 +1,28 @@
-[gd_scene format=3 uid="uid://ban6cjj71d8u0"]
+[gd_scene load_steps=7 format=3 uid="uid://odxl2vftt6x2"]
 
-[node name="MainMenu" type="CanvasLayer"]
+[ext_resource type="Texture2D" uid="uid://b5tj0h51utb0l" path="res://Assets/Sprites/image.png" id="1_fu7sn"]
+[ext_resource type="FontFile" uid="uid://pwwatf6xnjje" path="res://BoldPixels.ttf" id="2_jix8l"]
+[ext_resource type="FontFile" uid="uid://dwwtn57dghkmg" path="res://BoldPixels.otf" id="3_glbon"]
 
-[node name="Control" type="Control" parent="."]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_257up"]
+texture = ExtResource("1_fu7sn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wugcc"]
+bg_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m625n"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,12 +30,67 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.42658037, 0.07888464, 0.24988157, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 56
+theme_override_styles/panel = SubResource("StyleBoxTexture_257up")
+
+[node name="Button2" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = 63.0
+offset_right = 224.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_jix8l")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m625n")
+text = "Quit Game"
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -85.0
+offset_right = 224.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_jix8l")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m625n")
 text = "Start Game"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.9427856, 0.93508667, 0.68839294, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = 69.0
+offset_right = 484.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_font_sizes/font_size = 101
+text = "The Cursed Adventure"
