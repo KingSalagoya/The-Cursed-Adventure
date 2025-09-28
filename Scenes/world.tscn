@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=19 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Script" uid="uid://cl4ppvto10j64" path="res://Scripts/world.gd" id="1_ikia7"]
@@ -12,6 +12,27 @@
 [ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/fade.png" id="6_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/slash.png" id="6_k7acu"]
 [ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
+[ext_resource type="Texture2D" uid="uid://b5tj0h51utb0l" path="res://Assets/Sprites/image.png" id="13_kn0ld"]
+[ext_resource type="FontFile" uid="uid://pwwatf6xnjje" path="res://BoldPixels.ttf" id="14_hgpy0"]
+[ext_resource type="FontFile" uid="uid://dwwtn57dghkmg" path="res://BoldPixels.otf" id="15_t2t4p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_257up"]
+texture = ExtResource("13_kn0ld")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wugcc"]
+bg_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m625n"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
 
 [node name="World" type="Node"]
 script = ExtResource("1_ikia7")
@@ -56,7 +77,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HUD" type="CanvasLayer" parent="UI"]
-script = ExtResource("4_5v1tr")
 
 [node name="Main" type="Control" parent="UI/HUD"]
 layout_mode = 3
@@ -161,3 +181,83 @@ text = "Press D to Dash"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="MainMenu" type="CanvasLayer" parent="UI"]
+script = ExtResource("4_5v1tr")
+
+[node name="MainMenu" type="Control" parent="UI/MainMenu"]
+z_index = 7
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/MainMenu/MainMenu"]
+modulate = Color(0.42658037, 0.07888464, 0.24988157, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_257up")
+
+[node name="StartGame" type="Button" parent="UI/MainMenu/MainMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -85.0
+offset_right = 224.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_hgpy0")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m625n")
+text = "Start Game"
+
+[node name="QuitGame" type="Button" parent="UI/MainMenu/MainMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = 63.0
+offset_right = 224.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_hgpy0")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m625n")
+text = "Quit Game"
+
+[node name="Label" type="Label" parent="UI/MainMenu/MainMenu"]
+modulate = Color(0.9427856, 0.93508667, 0.68839294, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = 69.0
+offset_right = 484.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("15_t2t4p")
+theme_override_font_sizes/font_size = 101
+text = "The Cursed Adventure"
+
+[connection signal="pressed" from="UI/MainMenu/MainMenu/StartGame" to="UI/MainMenu" method="_on_start_game_pressed"]
+[connection signal="pressed" from="UI/MainMenu/MainMenu/QuitGame" to="UI/MainMenu" method="_on_quit_game_pressed"]

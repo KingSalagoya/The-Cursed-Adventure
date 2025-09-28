@@ -18,6 +18,9 @@ var dash_velocity           := 0.0
 var jump_countdown          := false
 var hud_toggle              := false
 
+func _ready() -> void:
+	GameManager.toggle_hud.connect(toggle_menu)
+
 func _physics_process(_delta: float) -> void:
 	#toggle_menu()
 	_handle_jump()
@@ -25,10 +28,8 @@ func _physics_process(_delta: float) -> void:
 	_play_animations()
 	move_and_slide()
 
-func toggle_menu() -> void:
-	if Input.is_action_just_pressed("open_hud"):
-		hud_toggle = !hud_toggle
-		GameManager._toggle_hud(hud_toggle)
+func toggle_menu(toggle: bool) -> void:
+	hud_toggle = toggle
 
 
 func _handle_movement() -> void:
