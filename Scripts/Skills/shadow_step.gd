@@ -4,15 +4,14 @@ class_name ShadowStep extends Skills
 @export var DASH_COUNTDOWN  := 1.0
 
 @onready var player: Player = $"../.."
-@onready var swooosh: AudioStreamPlayer = $"../../Sounds/Swooosh"
 
 var is_dashing              := false
+var in_air                  := false
 var tween                   : Tween
 
 
 func use() -> void:
 	if not is_dashing and Input.is_action_just_pressed("shadow step"):
-		swooosh.play()
 		is_dashing = true
 		player.dash_velocity = DASH_SPEED
 		if tween: tween.stop()
@@ -22,6 +21,12 @@ func use() -> void:
 		var timer = get_tree().create_timer(DASH_COUNTDOWN)
 		timer.timeout.connect(timeout)
 
+func _physics_process(_delta: float) -> void:
+	if in_air and player.is_on_floor():
+		in_air = false
+		is_dashing = false
+	if not player.is_on_floor():
+		in_air = true
 
 func timeout() -> void:
 	is_dashing = false

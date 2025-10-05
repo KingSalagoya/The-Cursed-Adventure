@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2bbaledf35cm"
-path="res://.godot/imported/eyebakki.png-b8692d3d4547076b6f658819077d960a.ctex"
+uid="uid://d4j87lj1n1jkr"
+path="res://.godot/imported/props.png-d0a8e53ce3ea79c4bb33a4601e541100.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/eyebakki.png"
-dest_files=["res://.godot/imported/eyebakki.png-b8692d3d4547076b6f658819077d960a.ctex"]
+source_file="res://Assets/Sprites/tile-sets/props.png"
+dest_files=["res://.godot/imported/props.png-d0a8e53ce3ea79c4bb33a4601e541100.ctex"]
 
 [params]
 

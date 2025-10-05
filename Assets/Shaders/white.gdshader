@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform vec4 color;
+uniform vec4 color: source_color;
 uniform float amount;
 
 void fragment() {

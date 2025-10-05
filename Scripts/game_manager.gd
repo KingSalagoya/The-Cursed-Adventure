@@ -7,6 +7,8 @@ signal win_sequence()
 var latest_check_point     := Vector2.ZERO
 
 func _ready() -> void:
+	RenderingServer.global_shader_parameter_set("VIEWPORT_SIZE", get_viewport().size)
+	print_debug(get_viewport().size)
 	print("hellow")
 
 func _physics_process(_delta: float) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdvm0oqn6dpxj"
-path="res://.godot/imported/battie.png-c4ed35d9764ffa1ad9c0e7b11436c0e1.ctex"
+uid="uid://c4p4fop5by3t2"
+path="res://.godot/imported/shadow_step.png-f5766eb2461605898dd4814cdc38cf6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/battie.png"
-dest_files=["res://.godot/imported/battie.png-c4ed35d9764ffa1ad9c0e7b11436c0e1.ctex"]
+source_file="res://Assets/Sprites/enemies/shadow_step.png"
+dest_files=["res://.godot/imported/shadow_step.png-f5766eb2461605898dd4814cdc38cf6f.ctex"]
 
 [params]
 

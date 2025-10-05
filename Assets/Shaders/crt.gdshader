@@ -1,21 +1,54 @@
 shader_type canvas_item;
-
-uniform vec2 screen_resolution = vec2(480, 270);
-uniform float scanline_intensity : hint_range(0.0, 1.0) = 0.3;
-uniform float color_bleed_weight : hint_range(0.0, 1.0) = 0.35;
+render_mode unshaded;
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
+uniform float scanline_strength : hint_range(0.0, 1.0) = 0.5;
+uniform float curvature_amount : hint_range(0.0, 0.1) = 0.035;
+uniform float bloom_strength : hint_range(0.0, 1.0) = 0.20;
+uniform float chromatic_offset : hint_range(0.0, 0.01) = 0.004;
+uniform float noise_strength : hint_range(0.0, 0.2) = 0.03;
+uniform float vignette_strength : hint_range(0.0, 1.0) = 0.25;
+
+global uniform vec2 VIEWPORT_SIZE;
+
+// Helper: convert uv to -1..1 range for curvature math
+vec2 curved_uv(vec2 uv, float amount) {
+    vec2 centered = uv * 2.0 - 1.0;
+    float radius = length(centered);
+    centered += centered * pow(radius, 2.0) * amount;
+    return (centered * 0.5) + 0.5;
+}
 
 void fragment() {
-	// Darken top halves of pixels
-	float color_dark_offset = 0.0;
-	int y_pos = int(floor(SCREEN_UV.y * screen_resolution.y * 2.0));
-	if (int(floor((float(y_pos) / 2.0))) * 2 == y_pos)
-		color_dark_offset = scanline_intensity;
+    // Curvature
+    vec2 base_uv = curved_uv(SCREEN_UV, curvature_amount);
+    vec4 tex = texture(screen_texture, base_uv);
 
-	// Blend pixel with left and top pixel to simulate color bleeding
-	vec4 adjacent_pixel_color_average = texture(screen_texture, SCREEN_UV - vec2(1.0 / screen_resolution.x, 0)) * 0.5 + texture(screen_texture, SCREEN_UV - vec2(0, 1.0 / screen_resolution.y)) * 0.5;
-	vec4 this_pixel_color = texture(screen_texture, SCREEN_UV);
+    // Scanlines
+    float scanline = 0.5 + 0.5 * sin((SCREEN_UV.y * VIEWPORT_SIZE.y) * 3.1415);
 
-	COLOR = adjacent_pixel_color_average * color_bleed_weight + this_pixel_color * (1.0 - color_bleed_weight) - vec4(vec3(color_dark_offset), 0);
+    tex.rgb *= mix(1.0, scanline, scanline_strength);
+
+    // Chromatic aberration (basic)
+    vec2 dir = base_uv - vec2(0.5, 0.5);
+    vec4 color;
+    color.r = texture(screen_texture, base_uv + dir * chromatic_offset).r;
+    color.g = texture(screen_texture, base_uv).g;
+    color.b = texture(screen_texture, base_uv - dir * chromatic_offset).b;
+
+    // Simple phosphor bloom/glow: blur around bright areas, pseudo-bloom
+    float lumin = dot(color.rgb, vec3(0.333)); // crude brightness
+    float bloom = bloom_strength * smoothstep(0.7, 1.0, lumin);
+    color.rgb += bloom;
+
+    // Subtle palette dithering (value noise, for illustration)
+    float noise = fract(sin(dot(SCREEN_UV ,vec2(12.9898,78.233))) * 43758.5453 + TIME * 7.0);
+    color.rgb += (noise - 0.5) * noise_strength;
+
+    // Vignette
+    float d = distance(SCREEN_UV, vec2(0.5));
+    color.rgb *= 1.0 - vignette_strength * pow(d, 2.0);
+
+    // Final output, clamp for LCDs
+    COLOR = vec4(clamp(color.rgb, 0.0, 1.0), 1.0);
 }

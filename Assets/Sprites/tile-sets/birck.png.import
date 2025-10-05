@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wqixurj5uai5"
-path="res://.godot/imported/slash.png-baa2531a92dff247fb5e0d95f2c253d1.ctex"
+uid="uid://b1mgueqgpr4v0"
+path="res://.godot/imported/birck.png-c9e7421e7a7811569aca239cd781b99d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/slash.png"
-dest_files=["res://.godot/imported/slash.png-baa2531a92dff247fb5e0d95f2c253d1.ctex"]
+source_file="res://Assets/Sprites/tile-sets/birck.png"
+dest_files=["res://.godot/imported/birck.png-c9e7421e7a7811569aca239cd781b99d.ctex"]
 
 [params]
 

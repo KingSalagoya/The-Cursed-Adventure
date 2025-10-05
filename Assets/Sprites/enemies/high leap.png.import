@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg85yts8svqx"
-path="res://.godot/imported/high leap.png-b7e4a1a754d35703b0195858859fb213.ctex"
+path="res://.godot/imported/high leap.png-d4b356e1bff1697a88d2afc53cfc0c75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/high leap.png"
-dest_files=["res://.godot/imported/high leap.png-b7e4a1a754d35703b0195858859fb213.ctex"]
+source_file="res://Assets/Sprites/enemies/high leap.png"
+dest_files=["res://.godot/imported/high leap.png-d4b356e1bff1697a88d2afc53cfc0c75.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yj1p7ce7v61x"
-path="res://.godot/imported/dust3.png-cfb32f884880e204be38f766f7ed67ae.ctex"
+uid="uid://wbvcm2ktibck"
+path="res://.godot/imported/fade.png-54540048f89cb198ce58eb6c9fdb8913.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/dust/dust3.png"
-dest_files=["res://.godot/imported/dust3.png-cfb32f884880e204be38f766f7ed67ae.ctex"]
+source_file="res://Assets/Sprites/enemies/fade.png"
+dest_files=["res://.godot/imported/fade.png-54540048f89cb198ce58eb6c9fdb8913.ctex"]
 
 [params]
 

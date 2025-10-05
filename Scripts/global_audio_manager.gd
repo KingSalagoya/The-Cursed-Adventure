@@ -37,15 +37,15 @@ func play_music(_audio: AudioStream) -> void:
 	fade_out_and_stop(old_music_player)
 
 
-func play_and_fade_in(music_player: AudioStreamPlayer) -> void:
-	music_player.play(0)
+func play_and_fade_in(_music_player: AudioStreamPlayer) -> void:
+	_music_player.play(0)
 
 	var tween                        := create_tween()
-	tween.tween_property(music_player, 'volume_db', 0, music_fade_duration)
+	tween.tween_property(_music_player, 'volume_db', 0, music_fade_duration)
 
-func fade_out_and_stop(music_player: AudioStreamPlayer) -> void:
+func fade_out_and_stop(_music_player: AudioStreamPlayer) -> void:
 	var tween                        := create_tween()
-	tween.tween_property(music_player, 'volume_db', -40, music_fade_duration)
+	tween.tween_property(_music_player, 'volume_db', -40, music_fade_duration)
 	await tween.finished
-	music_player.stop()
+	_music_player.stop()
 	
