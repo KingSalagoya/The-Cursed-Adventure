@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6tn4l77uc07l"
-path="res://.godot/imported/dust4.png-53ed6e1f8b7369ab6bef9222255ac6c0.ctex"
+uid="uid://bowdfvwch04jh"
+path="res://.godot/imported/metal.png-c45a6a2c4bccbff117d877421b2525ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/dust/dust4.png"
-dest_files=["res://.godot/imported/dust4.png-53ed6e1f8b7369ab6bef9222255ac6c0.ctex"]
+source_file="res://Assets/Sprites/tile-sets/metal.png"
+dest_files=["res://.godot/imported/metal.png-c45a6a2c4bccbff117d877421b2525ad.ctex"]
 
 [params]
 

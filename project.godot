@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="DayDreamTeamKairo"
+config/name="The Cursed Adventure"
 run/main_scene="uid://bj5xm3ygm2bw3"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
@@ -22,8 +22,11 @@ GlobalAudioManager="*res://Scripts/global_audio_manager.gd"
 
 [display]
 
-window/size/viewport_width=1980
+window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [input]
 
@@ -87,3 +90,10 @@ num3={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[shader_globals]
+
+VIEWPORT_SIZE={
+"type": "vec2",
+"value": Vector2(320, 180)
+}

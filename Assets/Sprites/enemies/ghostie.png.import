@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wbvcm2ktibck"
-path="res://.godot/imported/fade.png-56e40a7a538a83c76c94ed1975e56f69.ctex"
+uid="uid://diywug4ngyqpn"
+path="res://.godot/imported/ghostie.png-cde314cf23e02e1fb2cae24c0f18da6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/fade.png"
-dest_files=["res://.godot/imported/fade.png-56e40a7a538a83c76c94ed1975e56f69.ctex"]
+source_file="res://Assets/Sprites/enemies/ghostie.png"
+dest_files=["res://.godot/imported/ghostie.png-cde314cf23e02e1fb2cae24c0f18da6b.ctex"]
 
 [params]
 
