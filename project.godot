@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/game_manager.gd"
 GlobalAudioManager="*res://Scripts/global_audio_manager.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
@@ -27,6 +28,10 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [input]
 
@@ -90,6 +95,7 @@ num3={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
 
 [shader_globals]
 
