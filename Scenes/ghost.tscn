@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://cui0c8v4sgqex"]
+
+[ext_resource type="Script" uid="uid://bl2eqj01yho25" path="res://Scripts/hit_box.gd" id="1_108wt"]
+[ext_resource type="Texture2D" uid="uid://diywug4ngyqpn" path="res://Assets/Sprites/enemies/ghostie.png" id="1_e3r4w"]
+[ext_resource type="Script" uid="uid://crco4ilebjux8" path="res://Scripts/ghost.gd" id="2_108wt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3btnm"]
+atlas = ExtResource("1_e3r4w")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taxxh"]
+atlas = ExtResource("1_e3r4w")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thbej"]
+atlas = ExtResource("1_e3r4w")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uta0k"]
+atlas = ExtResource("1_e3r4w")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st3at"]
+atlas = ExtResource("1_e3r4w")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hbae"]
+atlas = ExtResource("1_e3r4w")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoekh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3btnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taxxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thbej")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uta0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st3at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hbae")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3btnm"]
+radius = 8.0
+height = 16.0
+
+[node name="Ghost" type="Node2D"]
+script = ExtResource("2_108wt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xoekh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7206051
+
+[node name="HitBox" type="Area2D" parent="."]
+script = ExtResource("1_108wt")
+metadata/_custom_type_script = "uid://bl2eqj01yho25"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_3btnm")
+debug_color = Color(0.9022144, 0.28405035, 0.32695305, 0.41960785)
