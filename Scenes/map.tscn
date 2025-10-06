@@ -5371,7 +5371,6 @@ metadata/_custom_type_script = "uid://888yv4myfetq"
 shape = SubResource("CircleShape2D_np2xp")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-visible = false
 scroll_scale = Vector2(0.9, 1)
 
 [node name="Background" type="TileMapLayer" parent="Parallax2D"]
@@ -5381,7 +5380,6 @@ tile_map_data = PackedByteArray("AADi/wgAAQAFAAUAAADi/wcAAQAFAAMAAADi/wYAAQAFAAI
 tile_set = SubResource("TileSet_olcgw")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
-visible = false
 scroll_scale = Vector2(0.7, 1)
 
 [node name="Background2" type="TileMapLayer" parent="Parallax2D2"]
@@ -5392,7 +5390,6 @@ tile_map_data = PackedByteArray("AADi/wgAAQAFAAUAAADi/wcAAQAFAAMAAADi/wYAAQAFAAI
 tile_set = SubResource("TileSet_olcgw")
 
 [node name="Parallax2D3" type="Parallax2D" parent="."]
-visible = false
 scroll_scale = Vector2(0.4, 1)
 
 [node name="Background3" type="TileMapLayer" parent="Parallax2D3"]
