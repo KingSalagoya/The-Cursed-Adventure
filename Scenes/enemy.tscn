@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://inja5wabcaw3"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://bcr1pdogihept" path="res://Assets/Sprites/sample enemy.png" id="1_hghv2"]
+[ext_resource type="Script" uid="uid://d4m8elqwmcgg" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://diywug4ngyqpn" path="res://Assets/Sprites/enemies/ghostie.png" id="1_hghv2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
-radius = 6.0827627
+radius = 16.0
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_1f0kj")
@@ -15,6 +15,8 @@ shape = SubResource("CircleShape2D_1f0kj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
 texture = ExtResource("1_hghv2")
+hframes = 3
+vframes = 2
 
 [node name="RayCast2D" type="RayCast2D" parent="Sprite2D"]
 position = Vector2(-1, 1)
