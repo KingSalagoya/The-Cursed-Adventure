@@ -1,8 +1,10 @@
-[gd_scene load_steps=53 format=4 uid="uid://cj1dk73jftq84"]
+[gd_scene load_steps=56 format=4 uid="uid://cj1dk73jftq84"]
 
 [ext_resource type="Shader" uid="uid://bldt0xsems8q6" path="res://Assets/Shaders/tilemap_saturation.gdshader" id="1_wrpp0"]
 [ext_resource type="Script" uid="uid://cin2bgtc4auot" path="res://Scripts/wind.gd" id="2_3fi14"]
 [ext_resource type="Shader" uid="uid://bq2wutyfn3ufb" path="res://Assets/Shaders/wind.gdshader" id="2_lt4hc"]
+[ext_resource type="PackedScene" uid="uid://cui0c8v4sgqex" path="res://Scenes/ghost.tscn" id="5_446mn"]
+[ext_resource type="Script" uid="uid://888yv4myfetq" path="res://Scripts/checkpoint.gd" id="6_n5lcu"]
 [ext_resource type="Shader" uid="uid://bry4x6i4kns2h" path="res://Assets/Shaders/godrays.gdshader" id="8_dfti5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qobs0"]
@@ -3687,6 +3689,9 @@ shader_parameter/color = Color(0.44612235, 0.5726096, 0.38452837, 1)
 shader_parameter/hdr = true
 shader_parameter/seed = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_te48s"]
+radius = 13.038404
+
 [node name="newmap" type="Node2D"]
 
 [node name="Level" type="Node2D" parent="."]
@@ -3763,3 +3768,14 @@ offset_left = 64.0
 offset_top = -184.0
 offset_right = 392.0
 offset_bottom = 8.0
+
+[node name="Ghost" parent="." instance=ExtResource("5_446mn")]
+position = Vector2(457, -99)
+
+[node name="CheckPoint" type="Area2D" parent="Ghost"]
+script = ExtResource("6_n5lcu")
+metadata/_custom_type_script = "uid://888yv4myfetq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/CheckPoint"]
+position = Vector2(-114, 48)
+shape = SubResource("CircleShape2D_te48s")
