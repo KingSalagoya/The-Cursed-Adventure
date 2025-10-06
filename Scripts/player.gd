@@ -23,6 +23,8 @@ var hud_toggle              := false
 enum STATES {RUNNING, JUMPING, DASHING, IDLE, FALLING}
 var PLAYER_STATE: STATES
 
+func _enter_tree() -> void:
+	GameManager.player = self
 
 func _ready() -> void:
 	GameManager.toggle_hud.connect(toggle_menu)

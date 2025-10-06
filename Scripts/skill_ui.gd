@@ -11,7 +11,7 @@ func _ready() -> void:
 	fade.pressed.connect(enable_fade)
 	GameManager.sacrifice_skill.emit("ShadowStep")
 	sacrifice("ShadowStep")
-	label.text = "Press 'D' while moving to Dash"
+	label.text = "Press 'C' while moving to Dash"
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("num1"):
