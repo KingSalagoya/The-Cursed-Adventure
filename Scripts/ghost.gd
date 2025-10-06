@@ -1,12 +1,32 @@
 extends Node2D
 
 var player                  : Player
-var speed                   := 10
+@export var home_position   : Vector2
+@export var follow_speed            := 10
+@export var return_speed            := 5
+@export var follow_distance         := 220   # Distance at which the enemy will start following the player
 
 func _ready() -> void:
 	player = GameManager.player
+	if home_position == Vector2.ZERO:
+		home_position = global_position
+
 
 func _physics_process(delta) -> void:
 	if player:
-		var direction       := (player.global_position-global_position).normalized()
-		position += direction * speed * delta
+		var direction       := player.global_position - global_position
+		var distance_to_player := direction.length()
+
+		# If the player is within the follow distance, move towards them
+		if distance_to_player <= follow_distance:
+			direction = direction.normalized()
+			position += direction * follow_speed * delta
+		else:
+			# Otherwise, return to home position
+			var return_direction = home_position - global_position
+			if return_direction.length() > 1:  # Optional check to prevent jittering when close
+				return_direction = return_direction.normalized()
+				position += return_direction * return_speed * delta
+
+		# Optionally, you can print the current position to the console for debugging
+		print("Enemy Position: ", global_position)
