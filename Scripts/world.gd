@@ -1,14 +1,14 @@
 extends Node
 
 @export var MUSIC: AudioStream
-@onready var timer: Timer = $UI/HUD/Main/MarginContainer/Control/Timer/Timer
-@onready var timer_label: Label = $UI/HUD/Main/MarginContainer/Timer/TimerLabel
+@onready var timer: Timer = $UI/HUD/Main/MarginContainer/Timer/Timer
+@onready var timer_label: Label = $UI/HUD/Main/MarginContainer/Timer/TimerContainer/TimerLabel
 var total_time_in_secs : int = 0
 
 func _ready() -> void:
 	GlobalAudioManager.play_music(MUSIC)
 	GameManager.win_sequence.connect(win_game)
-	$UI/HUD/Main/MarginContainer/Timer/Timer.start()
+	timer.start()
 
 func win_game() -> void:
 	$WinAnimationPlayer.play("win")

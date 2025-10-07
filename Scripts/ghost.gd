@@ -36,6 +36,3 @@ func _physics_process(delta) -> void:
 			
 		else:
 			$AnimatedSprite2D.play("idle")
-
-		# Optionally, you can print the current position to the console for debugging
-		print("Enemy Position: ", distance_to_player)
