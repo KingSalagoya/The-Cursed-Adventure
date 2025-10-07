@@ -16,7 +16,6 @@ class_name Player extends CharacterBody2D
 var dir                     := 0.0
 var look_dir                := 1.0
 var dash_velocity           := 0.0
-var stored_velocity         := 0.0
 var jump_countdown          := false
 var hud_toggle              := false
 
@@ -36,8 +35,6 @@ func _physics_process(_delta: float) -> void:
 	_handle_jump()
 	_handle_movement()
 	move_and_slide()
-	print_debug(stored_velocity)
-	#print_debug(velocity.y)
 
 
 func _handle_playerstate() -> void:
@@ -99,14 +96,8 @@ func _handle_movement() -> void:
 func _handle_jump() -> void:
 	if not is_on_floor():
 		if dash_velocity == 0.0:
-			if stored_velocity != 0:
-				velocity += Vector2(0, stored_velocity)
-				stored_velocity = 0
-			else:
-				velocity += Vector2(0, GRAVITY)
+			velocity += Vector2(0, GRAVITY)
 		else:
-			if velocity.y < 0:
-				stored_velocity = velocity.y
 			velocity.y = 0.0
 	elif Input.is_action_pressed("jump") and not hud_toggle:
 		jump_countdown = true
