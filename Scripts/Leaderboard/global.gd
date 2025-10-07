@@ -8,5 +8,5 @@ func _ready() -> void:
   })
 
   SilentWolf.configure_scores({
-	"open_scene_on_close": "res://scenes/MainPage.tscn"
+	"open_scene_on_close": "res://Scenes/world.tscn"
   })
