@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2h8ok8yfc7wb"]
+[gd_scene load_steps=8 format=3 uid="uid://b2h8ok8yfc7wb"]
 
 [ext_resource type="Script" uid="uid://xd6y2l5ii68w" path="res://addons/silent_wolf/Scores/Leaderboard.gd" id="1"]
 [ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="2_ixaq4"]
+[ext_resource type="FontFile" uid="uid://dwwtn57dghkmg" path="res://BoldPixels.otf" id="3_phk0k"]
 [ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="4"]
+[ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://PixelifySans-VariableFont_wght.ttf" id="4_1pj1v"]
+[ext_resource type="FontFile" uid="uid://pwwatf6xnjje" path="res://BoldPixels.ttf" id="5_1pj1v"]
 
 [sub_resource type="Theme" id="Theme_j1gah"]
 
@@ -31,8 +34,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Board/TitleContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "Leaderboard"
+theme_override_fonts/font = ExtResource("3_phk0k")
+theme_override_font_sizes/font_size = 102
+text = "Hall of Fame"
 horizontal_alignment = 1
 
 [node name="MessageContainer" type="CenterContainer" parent="Board"]
@@ -41,7 +45,8 @@ layout_mode = 2
 
 [node name="TextMessage" type="Label" parent="Board/MessageContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_fonts/font = ExtResource("4_1pj1v")
+theme_override_font_sizes/font_size = 42
 text = "Loading scores..."
 
 [node name="HighScores" type="CenterContainer" parent="Board"]
@@ -55,9 +60,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource("4")]
-custom_minimum_size = Vector2(600, 80)
+custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Close Leaderboard"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_1pj1v")
+theme_override_font_sizes/font_size = 45
+text = "Back"
 
 [connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
