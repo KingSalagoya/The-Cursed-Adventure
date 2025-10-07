@@ -13,6 +13,8 @@ func _ready() -> void:
 func win_game() -> void:
 	$WinAnimationPlayer.play("win")
 	GameManager.best_time = timer_label.text
+	GameManager.score = GameManager.best_time
+	SilentWolf.Scores.save_score(GameManager.player_name, GameManager.score)
 
 func _on_quit_game_pressed() -> void:
 	pass # Replace with function body.
