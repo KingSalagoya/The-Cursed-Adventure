@@ -27,6 +27,15 @@ func _physics_process(delta) -> void:
 			if return_direction.length() > 1:  # Optional check to prevent jittering when close
 				return_direction = return_direction.normalized()
 				position += return_direction * return_speed * delta
+		
+		if distance_to_player <= 50:
+			$AnimatedSprite2D.play("attack")
+			await get_tree().create_timer(0.5).timeout
+			$AnimatedSprite2D.play("idle")
+			await get_tree().create_timer(0.5).timeout
+			
+		else:
+			$AnimatedSprite2D.play("idle")
 
 		# Optionally, you can print the current position to the console for debugging
-		print("Enemy Position: ", global_position)
+		print("Enemy Position: ", distance_to_player)
