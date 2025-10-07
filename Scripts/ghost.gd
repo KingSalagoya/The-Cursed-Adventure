@@ -27,6 +27,3 @@ func _physics_process(delta) -> void:
 			if return_direction.length() > 1:  # Optional check to prevent jittering when close
 				return_direction = return_direction.normalized()
 				position += return_direction * return_speed * delta
-
-		# Optionally, you can print the current position to the console for debugging
-		print("Enemy Position: ", global_position)

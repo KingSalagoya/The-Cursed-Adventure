@@ -355,25 +355,28 @@ autowrap_mode = 2
 [node name="Timer" type="Control" parent="UI/HUD/Main/MarginContainer"]
 layout_mode = 2
 
-[node name="TimerLabel" type="Label" parent="UI/HUD/Main/MarginContainer/Timer"]
-layout_mode = 0
-offset_right = 111.0
-offset_bottom = 49.0
-theme_override_font_sizes/font_size = 35
-text = "Time : "
-
 [node name="Timer" type="Timer" parent="UI/HUD/Main/MarginContainer/Timer"]
 autostart = true
 
-[node name="Best_Time" type="Label" parent="UI/HUD/Main/MarginContainer/Timer"]
+[node name="TimerContainer" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Timer"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -111.0
-offset_bottom = 49.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 35
+grow_horizontal = 2
+theme_override_constants/separation = 1200
+alignment = 1
+
+[node name="TimerLabel" type="Label" parent="UI/HUD/Main/MarginContainer/Timer/TimerContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_0fj1v")
+theme_override_font_sizes/font_size = 52
+text = "Time : "
+
+[node name="Best_Time" type="Label" parent="UI/HUD/Main/MarginContainer/Timer/TimerContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("10_0fj1v")
+theme_override_font_sizes/font_size = 52
 text = "Best Time : "
 
 [node name="MainMenu" type="CanvasLayer" parent="UI"]
