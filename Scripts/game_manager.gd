@@ -7,6 +7,8 @@ signal win_sequence()
 var latest_check_point     := Vector2.ZERO
 var player: Player
 var best_time
+var player_name
+var score = 0
 
 func _ready() -> void:
 	RenderingServer.global_shader_parameter_set("VIEWPORT_SIZE", get_viewport().size)

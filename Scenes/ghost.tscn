@@ -68,9 +68,8 @@ script = ExtResource("2_108wt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xoekh")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.7206051
 
 [node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("1_108wt")
