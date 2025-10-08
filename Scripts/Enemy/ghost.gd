@@ -33,6 +33,10 @@ func _physics_process(delta) -> void:
 			await get_tree().create_timer(0.5).timeout
 			$AnimatedSprite2D.play("idle")
 			await get_tree().create_timer(0.5).timeout
+		
+		if distance_to_player <= 40:
+			$AnimatedSprite2D.play("attack")
+			
 			
 		else:
 			$AnimatedSprite2D.play("idle")
