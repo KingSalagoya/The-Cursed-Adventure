@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://cj1dk73jftq84"]
+[gd_scene load_steps=60 format=4 uid="uid://cj1dk73jftq84"]
 
 [ext_resource type="Shader" uid="uid://bldt0xsems8q6" path="res://Assets/Shaders/tilemap_saturation.gdshader" id="1_wrpp0"]
 [ext_resource type="Script" uid="uid://cin2bgtc4auot" path="res://Scripts/wind.gd" id="2_3fi14"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://baoxvm047rji5" path="res://Scripts/navigation_region_2d.gd" id="7_dfti5"]
 [ext_resource type="Shader" uid="uid://bry4x6i4kns2h" path="res://Assets/Shaders/godrays.gdshader" id="8_dfti5"]
 [ext_resource type="PackedScene" uid="uid://brj6kpysh3kxl" path="res://Scenes/Enemy/bat.tscn" id="8_uveql"]
+[ext_resource type="PackedScene" uid="uid://wvjmbuajs6bt" path="res://Scenes/Enemy/laser.tscn" id="9_uveql"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qobs0"]
 shader = ExtResource("1_wrpp0")
@@ -3792,3 +3793,6 @@ script = ExtResource("7_dfti5")
 
 [node name="Bat" parent="." instance=ExtResource("8_uveql")]
 position = Vector2(621, -154)
+
+[node name="Laser" parent="." instance=ExtResource("9_uveql")]
+position = Vector2(407, -32)
