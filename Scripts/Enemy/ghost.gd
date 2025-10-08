@@ -28,15 +28,17 @@ func _physics_process(delta) -> void:
 				return_direction = return_direction.normalized()
 				position += return_direction * return_speed * delta
 		
-		if distance_to_player <= 50:
+		if distance_to_player <= 50 and distance_to_player >= 40:
 			$AnimatedSprite2D.play("attack")
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(1).timeout
 			$AnimatedSprite2D.play("idle")
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(1).timeout
 		
-		if distance_to_player <= 40:
+		elif  distance_to_player <= 40:
 			$AnimatedSprite2D.play("attack")
 			
+		elif distance_to_player == follow_distance or distance_to_player >= follow_distance-5 and distance_to_player <= follow_distance:
+			$AnimatedSprite2D.play("attack")
 			
 		else:
 			$AnimatedSprite2D.play("idle")
