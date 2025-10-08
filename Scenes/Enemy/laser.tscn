@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://wvjmbuajs6bt"]
+
+[ext_resource type="Script" uid="uid://dra2inopedpui" path="res://Scripts/Enemy/laser.gd" id="1_e46n8"]
+[ext_resource type="Texture2D" uid="uid://ddqdw6v8e3pdg" path="res://Assets/Sprites/enemies/laser.png" id="2_dxqmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e46n8"]
+atlas = ExtResource("2_dxqmw")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxqmw"]
+atlas = ExtResource("2_dxqmw")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0xkd"]
+atlas = ExtResource("2_dxqmw")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7njtr"]
+atlas = ExtResource("2_dxqmw")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhew6"]
+atlas = ExtResource("2_dxqmw")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcc1w"]
+atlas = ExtResource("2_dxqmw")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lcc1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e46n8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxqmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0xkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7njtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhew6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcc1w")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcbbj"]
+size = Vector2(10, 48)
+
+[node name="Laser" type="Area2D"]
+script = ExtResource("1_e46n8")
+metadata/_custom_type_script = "uid://bl2eqj01yho25"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lcc1w")
+animation = &"laser"
+autoplay = "idle"
+frame_progress = 0.737583
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pcbbj")

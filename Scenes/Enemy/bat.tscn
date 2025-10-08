@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://brj6kpysh3kxl"]
+
+[ext_resource type="Script" uid="uid://bl2eqj01yho25" path="res://Scripts/hit_box.gd" id="1_cdyt7"]
+[ext_resource type="Script" uid="uid://crco4ilebjux8" path="res://Scripts/ghost.gd" id="1_m21ue"]
+[ext_resource type="Texture2D" uid="uid://cdvm0oqn6dpxj" path="res://Assets/Sprites/enemies/battie.png" id="2_akjst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkrpk"]
+atlas = ExtResource("2_akjst")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b00ve"]
+atlas = ExtResource("2_akjst")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrkgg"]
+atlas = ExtResource("2_akjst")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujh7a"]
+atlas = ExtResource("2_akjst")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_210id"]
+atlas = ExtResource("2_akjst")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k631"]
+atlas = ExtResource("2_akjst")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfj0v"]
+atlas = ExtResource("2_akjst")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bct5"]
+atlas = ExtResource("2_akjst")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xthre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkrpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b00ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrkgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujh7a")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_210id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k631")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfj0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bct5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tw7jh"]
+radius = 8.0
+height = 16.0
+
+[node name="Bat" type="Node2D"]
+script = ExtResource("1_m21ue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xthre")
+animation = &"attack"
+autoplay = "idle"
+frame_progress = 0.9849164
+
+[node name="HitBox" type="Area2D" parent="."]
+visible = false
+script = ExtResource("1_cdyt7")
+metadata/_custom_type_script = "uid://bl2eqj01yho25"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_tw7jh")
+debug_color = Color(0.9022144, 0.28405035, 0.32695305, 0.41960785)
