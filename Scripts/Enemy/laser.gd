@@ -1,7 +1,7 @@
 extends HitBox
 
 var player                  : Player
-@export var follow_distance         := 50
+@export var follow_distance := 50
 
 func _ready() -> void:
 	player = GameManager.player
