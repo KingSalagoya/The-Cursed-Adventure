@@ -3784,12 +3784,11 @@ metadata/_custom_type_script = "uid://888yv4myfetq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoint"]
 shape = SubResource("CircleShape2D_te48s")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." node_paths=PackedStringArray("tile_map")]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_24nbe")
 script = ExtResource("7_dfti5")
-tile_map = NodePath("../Level/level")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 
 [node name="Bat" parent="." instance=ExtResource("8_uveql")]
-position = Vector2(465, -82)
+position = Vector2(621, -154)
