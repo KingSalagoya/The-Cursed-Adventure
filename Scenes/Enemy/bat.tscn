@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://brj6kpysh3kxl"]
 
 [ext_resource type="Script" uid="uid://bl2eqj01yho25" path="res://Scripts/hit_box.gd" id="1_cdyt7"]
-[ext_resource type="Script" uid="uid://crco4ilebjux8" path="res://Scripts/ghost.gd" id="1_m21ue"]
+[ext_resource type="Script" uid="uid://bt60ga7e4qr3p" path="res://Scripts/Enemy/bat.gd" id="1_m21ue"]
 [ext_resource type="Texture2D" uid="uid://cdvm0oqn6dpxj" path="res://Assets/Sprites/enemies/battie.png" id="2_akjst"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkrpk"]
