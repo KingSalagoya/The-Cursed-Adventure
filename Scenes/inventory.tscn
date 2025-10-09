@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.46666667, 0, 0.8901961, 0.20392157)
+color = Color(0.46666667, 0, 0.8901961, 0.18431373)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -123,6 +123,7 @@ texture = ExtResource("3_sd8fj")
 expand_mode = 1
 
 [node name="Dash Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = -277.97617
 offset_top = 44.64283
