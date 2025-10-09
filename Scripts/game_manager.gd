@@ -5,6 +5,11 @@ signal toggle_hud(toggle: bool)
 signal start_game ()
 signal win_sequence ()
 
+#skill progress
+var dash_unlocked = false
+var double_jump_unlocked = false
+var inviibity = false
+
 var best_time              := 0
 var current_time           := 0
 var player_name            := ""
