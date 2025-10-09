@@ -8,7 +8,7 @@ signal win_sequence ()
 #skill progress
 var dash_unlocked = false
 var double_jump_unlocked = false
-var inviibity = false
+var inviibity_unlocked = false
 
 var best_time              := 0
 var current_time           := 0
