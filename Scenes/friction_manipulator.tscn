@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhu3vud23x8qx"]
+
+[ext_resource type="Script" uid="uid://wiqtni176v4" path="res://Scripts/friction_manipulator.gd" id="1_wcfkj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07l23"]
+size = Vector2(295.5, 170)
+
+[node name="Friction_Manipulator" type="Area2D"]
+script = ExtResource("1_wcfkj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(149, -84)
+shape = SubResource("RectangleShape2D_07l23")
