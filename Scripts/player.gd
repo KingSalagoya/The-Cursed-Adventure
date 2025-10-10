@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 @export var SPEED           := 250.0
 @export var JUMP_VELOCITY   := 400.0
 @export var MAX_HEALTH      := 5
-@export var GRAVITY         := 19.6
+@export var GRAVITY         := 19.5
 
 @onready var graphics: AnimatedSprite2D = $Graphics
 
