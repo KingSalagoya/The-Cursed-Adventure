@@ -49,3 +49,11 @@ func fade_out_and_stop(_music_player: AudioStreamPlayer) -> void:
 	await tween.finished
 	_music_player.stop()
 	
+
+func play_audio_oneshot(audio_steam: AudioStream) -> void:
+	var player = AudioStreamPlayer.new()
+	add_child(player)
+	player.stream = audio_steam
+	player.play()
+	await player.finished
+	player.queue_free()

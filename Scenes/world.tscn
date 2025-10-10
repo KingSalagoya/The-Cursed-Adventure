@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/skill_ui.gd" id="4_k7acu"]
 [ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/enemies/high leap.png" id="4_o06y3"]
 [ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/enemies/shadow_step.png" id="5_k7acu"]
-[ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/newmap.tscn" id="5_t2t4p"]
+[ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/newmap2.tscn" id="5_t2t4p"]
 [ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/enemies/fade.png" id="6_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/enemies/slash.png" id="6_k7acu"]
 [ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
@@ -206,7 +206,6 @@ stretch = true
 stretch_shrink = 6
 
 [node name="SubViewport" type="SubViewport" parent="GameWorld"]
-transparent_bg = true
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 size = Vector2i(320, 180)
@@ -499,7 +498,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="PostProcessing" type="Control" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -509,7 +507,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Vigneete" type="ColorRect" parent="UI/PostProcessing"]
-visible = false
 z_index = 10
 material = SubResource("ShaderMaterial_0pcbe")
 layout_mode = 1
