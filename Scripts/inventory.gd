@@ -32,3 +32,13 @@ func _usability():
 	else:
 		$Control/VBoxContainer/SkillUI/ShadowStep/TextureRect.visible = true
 	
+	if GameManager.double_jump_unlocked == true:
+		$Control/VBoxContainer/SkillUI/ShadowStep/TextureRect.visible = false
+	else:
+		$Control/VBoxContainer/SkillUI/ShadowStep/TextureRect.visible = true
+	
+	if GameManager.invisibility == true:
+		$Control/VBoxContainer/SkillUI/ShadowStep/TextureRect.visible = false
+	else:
+		$Control/VBoxContainer/SkillUI/ShadowStep/TextureRect.visible = true
+	
