@@ -1,7 +1,7 @@
 extends Node
 
-signal sacrifice_skill(name: String)
-signal toggle_hud(toggle: bool)
+signal sacrifice_skill (name: String)
+signal toggle_hud (toggle: bool)
 signal start_game ()
 signal win_sequence ()
 

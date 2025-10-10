@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=31 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Script" uid="uid://cl4ppvto10j64" path="res://Scripts/world.gd" id="1_ikia7"]
@@ -7,9 +7,8 @@
 [ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/skill_ui.gd" id="4_k7acu"]
 [ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/enemies/high leap.png" id="4_o06y3"]
 [ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/enemies/shadow_step.png" id="5_k7acu"]
-[ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/newmap.tscn" id="5_t2t4p"]
+[ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/newmap2.tscn" id="5_t2t4p"]
 [ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/enemies/fade.png" id="6_5v1tr"]
-[ext_resource type="PackedScene" uid="uid://cki3yxdsjalae" path="res://Scenes/invisibility_newmap.tscn" id="6_axeuq"]
 [ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/enemies/slash.png" id="6_k7acu"]
 [ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
 [ext_resource type="Script" uid="uid://dwevmyss2qvjo" path="res://Scripts/main_menu.gd" id="13_axeuq"]
@@ -207,7 +206,6 @@ stretch = true
 stretch_shrink = 6
 
 [node name="SubViewport" type="SubViewport" parent="GameWorld"]
-transparent_bg = true
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 size = Vector2i(320, 180)
@@ -235,9 +233,6 @@ process_material = SubResource("ParticleProcessMaterial_t2t4p")
 [node name="Scenes" type="Node2D" parent="GameWorld/SubViewport"]
 
 [node name="newmap" parent="GameWorld/SubViewport/Scenes" instance=ExtResource("5_t2t4p")]
-
-[node name="newmap2" parent="GameWorld/SubViewport/Scenes" instance=ExtResource("6_axeuq")]
-position = Vector2(951.5217, -24.37181)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -502,7 +497,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="PostProcessing" type="Control" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -512,7 +506,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Vigneete" type="ColorRect" parent="UI/PostProcessing"]
-visible = false
 z_index = 10
 material = SubResource("ShaderMaterial_0pcbe")
 layout_mode = 1

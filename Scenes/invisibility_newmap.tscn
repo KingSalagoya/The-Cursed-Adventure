@@ -3793,9 +3793,10 @@ position = Vector2(639, -3)
 [node name="Ghost3" parent="Enemy/Ghost" instance=ExtResource("2_elama")]
 position = Vector2(961, -151)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Enemy"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Enemy" node_paths=PackedStringArray("tile_map")]
 navigation_polygon = SubResource("NavigationPolygon_0flvw")
 script = ExtResource("4_0flvw")
+tile_map = NodePath("../../Level/level")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Enemy"]
 
