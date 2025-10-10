@@ -215,6 +215,7 @@ render_target_update_mode = 4
 
 [node name="Player" parent="GameWorld/SubViewport/Player" instance=ExtResource("1_a02cp")]
 position = Vector2(66.833336, -38.333332)
+GRAVITY = 19.5
 
 [node name="Camera2D2" type="Camera2D" parent="GameWorld/SubViewport/Player/Player"]
 position = Vector2(-0.00033569336, 0.00033187866)
