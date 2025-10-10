@@ -31,13 +31,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -399.0
-offset_top = 83.0
-offset_right = 413.0
-offset_bottom = 283.0
+offset_left = -304.5
+offset_top = 19.0
+offset_right = 304.5
+offset_bottom = 170.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.72109, 0.7156165, 0.9999998, 1)
 theme_override_fonts/font = ExtResource("1_k1vlg")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 150
 text = "Inventory"
 
 [node name="Control" type="Control" parent="."]
@@ -55,10 +56,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -457.73807
-offset_top = -169.04764
-offset_right = 2.2619324
-offset_bottom = -49.047638
+offset_left = -441.0714
+offset_top = -169.04765
+offset_right = 18.928589
+offset_bottom = -49.047653
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -122,15 +123,14 @@ texture = ExtResource("3_sd8fj")
 expand_mode = 1
 
 [node name="Dash Label" type="Label" parent="Control"]
-visible = false
 layout_mode = 0
-offset_left = -328.5714
-offset_top = 44.64279
-offset_right = -160.57141
-offset_bottom = 129.64279
+offset_left = -277.97617
+offset_top = 44.64283
+offset_right = -109.976166
+offset_bottom = 129.64282
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_c5ffv")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 50
 text = "Dash"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -144,7 +144,7 @@ offset_right = -20.166626
 offset_bottom = 127.85712
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_c5ffv")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 50
 text = "Double Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -158,11 +158,30 @@ offset_right = -65.88092
 offset_bottom = 127.85712
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_c5ffv")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 50
 text = "Invisibility"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="msg" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -598.21423
+offset_top = 47.02379
+offset_right = 240.78577
+offset_bottom = 132.0238
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_c5ffv")
+theme_override_font_sizes/font_size = 50
+text = "Collect SHARDS to unlock new skills."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_exited" from="Control/VBoxContainer/SkillUI" to="." method="_on_skill_ui_mouse_exited"]
 [connection signal="mouse_entered" from="Control/VBoxContainer/SkillUI/ShadowStep" to="." method="_on_shadow_step_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/SkillUI/ShadowStep" to="." method="_on_shadow_step_mouse_exited"]
 [connection signal="mouse_entered" from="Control/VBoxContainer/SkillUI/HighLeap" to="." method="_on_high_leap_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/SkillUI/HighLeap" to="." method="_on_high_leap_mouse_exited"]
 [connection signal="mouse_entered" from="Control/VBoxContainer/SkillUI/Fade" to="." method="_on_fade_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/SkillUI/Fade" to="." method="_on_fade_mouse_exited"]
+[connection signal="mouse_exited" from="Control/Dash Label" to="." method="_on_dash_label_mouse_exited"]
+[connection signal="mouse_exited" from="Control/Double Jump Label" to="." method="_on_double_jump_label_mouse_exited"]
