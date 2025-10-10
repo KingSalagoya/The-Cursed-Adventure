@@ -10,6 +10,10 @@ var dash_unlocked = false
 var double_jump_unlocked = false
 var inviibity_unlocked = false
 
+var dash_shards : int = 0 
+var double_jump_shards : int = 0
+var invisibility_shards : int =0
+
 var best_time              := 0
 var current_time           := 0
 var player_name            := ""
