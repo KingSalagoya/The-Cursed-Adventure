@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=3 uid="uid://blrf1mfece82n"]
+
+[ext_resource type="FontFile" uid="uid://dwwtn57dghkmg" path="res://BoldPixels.otf" id="1_k1vlg"]
+[ext_resource type="Script" uid="uid://bv8jlt4k4abbu" path="res://Scripts/inventory.gd" id="1_sd8fj"]
+[ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/enemies/shadow_step.png" id="2_c5ffv"]
+[ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/enemies/slash.png" id="3_sd8fj"]
+[ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/enemies/high leap.png" id="4_trvqw"]
+[ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/enemies/fade.png" id="5_aqnmd"]
+[ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://PixelifySans-VariableFont_wght.ttf" id="6_c5ffv"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd8fj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.46666667, 0, 0.8901961, 0.20392157)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 83.0
+offset_right = 413.0
+offset_bottom = 283.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_k1vlg")
+theme_override_font_sizes/font_size = 200
+text = "Inventory"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1315.0
+offset_top = 742.00006
+offset_right = 1315.0
+offset_bottom = 742.00006
+scale = Vector2(1.6800001, 1.6800001)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -457.73807
+offset_top = -169.04764
+offset_right = 2.2619324
+offset_bottom = -49.047638
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SkillUI" type="HBoxContainer" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ShadowStep" type="TextureButton" parent="Control/VBoxContainer/SkillUI"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+texture_normal = ExtResource("2_c5ffv")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/SkillUI/ShadowStep"]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sd8fj")
+expand_mode = 1
+
+[node name="HighLeap" type="TextureButton" parent="Control/VBoxContainer/SkillUI"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_trvqw")
+stretch_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="Control/VBoxContainer/SkillUI/HighLeap"]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sd8fj")
+expand_mode = 1
+
+[node name="Fade" type="TextureButton" parent="Control/VBoxContainer/SkillUI"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+texture_normal = ExtResource("5_aqnmd")
+stretch_mode = 0
+
+[node name="TextureRect3" type="TextureRect" parent="Control/VBoxContainer/SkillUI/Fade"]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sd8fj")
+expand_mode = 1
+
+[node name="Dash Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = -328.5714
+offset_top = 44.64279
+offset_right = -160.57141
+offset_bottom = 129.64279
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_c5ffv")
+theme_override_font_sizes/font_size = 70
+text = "Dash"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Double Jump Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = -429.16663
+offset_top = 42.857113
+offset_right = -20.166626
+offset_bottom = 127.85712
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_c5ffv")
+theme_override_font_sizes/font_size = 70
+text = "Double Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Invisibility Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = -414.88092
+offset_top = 42.857113
+offset_right = -65.88092
+offset_bottom = 127.85712
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_c5ffv")
+theme_override_font_sizes/font_size = 70
+text = "Invisibility"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Control/VBoxContainer/SkillUI/ShadowStep" to="." method="_on_shadow_step_mouse_entered"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/SkillUI/HighLeap" to="." method="_on_high_leap_mouse_entered"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/SkillUI/Fade" to="." method="_on_fade_mouse_entered"]
