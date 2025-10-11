@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://cin2bgtc4auot" path="res://Scripts/wind.gd" id="2_3fi14"]
 [ext_resource type="Shader" uid="uid://bq2wutyfn3ufb" path="res://Assets/Shaders/wind.gdshader" id="2_lt4hc"]
 [ext_resource type="PackedScene" uid="uid://dml173r8a5tyv" path="res://Scenes/water/water_body.tscn" id="5_n5lcu"]
-[ext_resource type="Script" uid="uid://888yv4myfetq" path="res://Scripts/checkpoint.gd" id="6_n5lcu"]
-[ext_resource type="Script" uid="uid://wowk7ssc8rsu" path="res://Scripts/hidden_areas/hidden_area_trigger.gd" id="7_te48s"]
+[ext_resource type="Script" uid="uid://888yv4myfetq" path="res://Scripts/Systems/checkpoint.gd" id="6_n5lcu"]
+[ext_resource type="Script" uid="uid://wowk7ssc8rsu" path="res://Scripts/HiddenAreas/hidden_area_trigger.gd" id="7_te48s"]
 [ext_resource type="Shader" uid="uid://bry4x6i4kns2h" path="res://Assets/Shaders/godrays.gdshader" id="8_dfti5"]
-[ext_resource type="Script" uid="uid://csiy7jr17rk78" path="res://Scripts/hidden_areas/area_trigger_resource.gd" id="8_uveql"]
+[ext_resource type="Script" uid="uid://csiy7jr17rk78" path="res://Scripts/HiddenAreas/area_trigger_resource.gd" id="8_uveql"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qobs0"]
 shader = ExtResource("1_wrpp0")
@@ -3818,11 +3818,11 @@ shape = SubResource("RectangleShape2D_dfti5")
 
 [node name="Polygon2D" type="Polygon2D" parent="HiddenAreaTrigger"]
 position = Vector2(-453, 80)
-color = Color(0.057090033, 0.028599998, 0.11, 0.93333334)
+color = Color(0.05882353, 0.02745098, 0.10980392, 0.93333334)
 polygon = PackedVector2Array(221, -107, 320, -107, 456, -106, 456, -62, 430, -62, 430, -78, 322, -78, 322, -62, 278, -62, 278, -77, 221, -77)
 
 [node name="Polygon2D2" type="Polygon2D" parent="HiddenAreaTrigger"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-557, 144)
-color = Color(0.12004833, 0.0969, 0.17, 0.8862745)
+color = Color(0.05882353, 0.02745098, 0.10980392, 0.93333334)
 polygon = PackedVector2Array(320, -112, 560, -112, 560, -184, 592, -184, 656, -184, 656, -136, 656, 8, 320, 8)
