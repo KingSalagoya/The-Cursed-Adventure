@@ -371,6 +371,7 @@ theme_override_font_sizes/font_size = 52
 text = "Time : "
 
 [node name="MainMenu" type="CanvasLayer" parent="UI"]
+visible = false
 script = ExtResource("13_axeuq")
 
 [node name="MainMenu" type="Control" parent="UI/MainMenu"]
@@ -507,7 +508,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Vigneete" type="ColorRect" parent="UI/PostProcessing"]
+[node name="Vignete" type="ColorRect" parent="UI/PostProcessing"]
 z_index = 10
 material = SubResource("ShaderMaterial_0pcbe")
 layout_mode = 1

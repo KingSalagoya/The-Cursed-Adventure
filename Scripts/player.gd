@@ -5,12 +5,13 @@ class_name Player extends CharacterBody2D
 @export var MAX_HEALTH      := 5
 @export var GRAVITY         := 19.5
 
-@onready var graphics: AnimatedSprite2D = $Graphics
 
+@onready var graphics: AnimatedSprite2D = $Graphics
 @onready var jump_sfx: AudioStreamPlayer = $Sounds/Jump
 @onready var spike_hurt_sfx: AudioStreamPlayer = $Sounds/SpikeSound
 @onready var footstep_sfx: AudioStreamPlayer = $Sounds/footstep
 @onready var dash_sfx: AudioStreamPlayer = $Sounds/Swooosh
+@onready var iris_effect: ColorRect = $UIGraphics/Control/Iris
 
 
 var dir                     := 0.0
@@ -27,6 +28,8 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	GameManager.toggle_hud.connect(toggle_menu)
+	GameManager.player_light_toggle.connect(_light_toggle)
+	GameManager.player_iris_update.connect(_iris_update)
 
 
 func _physics_process(_delta: float) -> void:
@@ -34,6 +37,7 @@ func _physics_process(_delta: float) -> void:
 	_handle_playerstate_effects()
 	_handle_jump()
 	_handle_movement()
+	_update_screen_pos()
 	move_and_slide()
 
 
@@ -71,9 +75,8 @@ func _handle_playerstate_effects() -> void:
 			graphics.play("idle", 0.5)
 
 		STATES.DASHING:
-			graphics.play("dash", 3.5)
+			graphics.play("dash", 3.0)
 			if not dash_sfx.playing: dash_sfx.play(0.05)
-			
 
 
 func toggle_menu(toggle: bool) -> void:
@@ -93,6 +96,7 @@ func _handle_movement() -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+
 func _handle_jump() -> void:
 	if not is_on_floor():
 		if dash_velocity == 0.0:
@@ -111,6 +115,7 @@ func jump() -> void:
 	PLAYER_STATE = STATES.JUMPING
 	velocity.y = -JUMP_VELOCITY
 
+
 func _update_orientation(_dir: float) -> void:
 	if _dir < 0:
 		graphics.flip_h = true
@@ -124,3 +129,22 @@ func take_damage() -> void:
 	global_position = GameManager.latest_check_point
 	$AdvancedGraphics.play("HurtAnim")
 	spike_hurt_sfx.play()
+
+
+func _light_toggle(_toggle: bool) -> void:
+	pass
+
+
+func _iris_update(toggle: bool, radius: float) -> void:
+	iris_effect.visible = toggle
+	var shader : ShaderMaterial = iris_effect.material
+	shader.set_shader_parameter("radius", radius)
+
+
+func _update_screen_pos() -> void:
+	if iris_effect.visible == false: return
+	var screen_coords = get_viewport_transform() * global_position
+	var shader : ShaderMaterial = iris_effect.material
+	shader.set_shader_parameter("player_center", screen_coords)
+	#print_debug(shader.)
+	#print_debug(screen_coords)

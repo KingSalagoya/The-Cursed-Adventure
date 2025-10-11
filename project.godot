@@ -104,3 +104,15 @@ VIEWPORT_SIZE={
 "type": "vec2",
 "value": Vector2(320, 180)
 }
+PLAYER_CENTER={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
+SCREEN_WIDTH={
+"type": "float",
+"value": 320.0
+}
+SCREEN_HEIGHT={
+"type": "float",
+"value": 180.0
+}

@@ -59,5 +59,7 @@ func set_collision_width(value) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	#var speed = body.velocity.y + motion_factor
-	var speed = (body.velocity.y/200) + motion_factor
+	var middle_value = (body.velocity.y + body.velocity.x)/2
+	if middle_value < 0: middle_value *= -1
+	var speed = (middle_value/200) + motion_factor
 	emit_signal("splash", index, speed)

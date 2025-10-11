@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dml173r8a5tyv"]
 
 [ext_resource type="Script" uid="uid://c7x0sbeb62vtd" path="res://Scripts/Water/water_body.gd" id="1_0tbl2"]
-[ext_resource type="Shader" path="res://Assets/Shaders/water_shader.gdshader" id="2_0tbl2"]
+[ext_resource type="Shader" uid="uid://cl3d646gkr76q" path="res://Assets/Shaders/water_shader.gdshader" id="2_0tbl2"]
 [ext_resource type="Texture2D" uid="uid://byspr2vtrf6yi" path="res://Assets/Sprites/160x160.png" id="3_vddtq"]
 [ext_resource type="AudioStream" uid="uid://vjdgtkgg5kds" path="res://Assets/Sounds/Water/water-splash-1.mp3" id="4_rfg0p"]
 [ext_resource type="AudioStream" uid="uid://dicf1fxjaxg4g" path="res://Assets/Sounds/Water/water-splash-2.mp3" id="5_d0bqs"]
@@ -22,7 +22,7 @@ seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vddtq"]
 shader = ExtResource("2_0tbl2")
-shader_parameter/water_color = Color(0.0705882, 0.305882, 0.537255, 1)
+shader_parameter/water_color = Color(0.00547169, 0.065961935, 0.14386168, 1)
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_kv71m")
 
 [node name="WaterBody" type="Node2D"]
@@ -41,7 +41,7 @@ scale = Vector2(50, 1)
 texture = ExtResource("3_vddtq")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
