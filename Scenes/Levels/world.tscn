@@ -1,20 +1,20 @@
 [gd_scene load_steps=31 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
-[ext_resource type="Script" uid="uid://cl4ppvto10j64" path="res://Scripts/world.gd" id="1_ikia7"]
+[ext_resource type="Script" uid="uid://cl4ppvto10j64" path="res://Scripts/Systems/world.gd" id="1_ikia7"]
 [ext_resource type="AudioStream" uid="uid://42vaoa6tub2j" path="res://Assets/Sounds/SacrificeAdventure_FULL_SONG_MusicGPT.mp3" id="2_7yui6"]
 [ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="3_5a7ea"]
-[ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/skill_ui.gd" id="4_k7acu"]
+[ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/Systems/skill_ui.gd" id="4_k7acu"]
 [ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/enemies/high leap.png" id="4_o06y3"]
 [ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/enemies/shadow_step.png" id="5_k7acu"]
-[ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/newmap2.tscn" id="5_t2t4p"]
+[ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/Levels/newmap2.tscn" id="5_t2t4p"]
 [ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/enemies/fade.png" id="6_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/enemies/slash.png" id="6_k7acu"]
-[ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
-[ext_resource type="Script" uid="uid://dwevmyss2qvjo" path="res://Scripts/main_menu.gd" id="13_axeuq"]
+[ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
+[ext_resource type="Script" uid="uid://dwevmyss2qvjo" path="res://Scripts/UI/main_menu.gd" id="13_axeuq"]
 [ext_resource type="Texture2D" uid="uid://b5tj0h51utb0l" path="res://Assets/Sprites/image.png" id="13_kn0ld"]
-[ext_resource type="FontFile" uid="uid://pwwatf6xnjje" path="res://BoldPixels.ttf" id="14_hgpy0"]
-[ext_resource type="FontFile" uid="uid://dwwtn57dghkmg" path="res://BoldPixels.otf" id="15_t2t4p"]
+[ext_resource type="FontFile" uid="uid://pwwatf6xnjje" path="res://Assets/Fonts/BoldPixels.ttf" id="14_hgpy0"]
+[ext_resource type="FontFile" uid="uid://dwwtn57dghkmg" path="res://Assets/Fonts/BoldPixels.otf" id="15_t2t4p"]
 [ext_resource type="Shader" uid="uid://rcpoj4ygjmwu" path="res://Assets/Shaders/film_grain.gdshader" id="16_hgpy0"]
 [ext_resource type="Shader" uid="uid://b3jnx5o0y68py" path="res://Assets/Shaders/vignete.gdshader" id="16_t2t4p"]
 [ext_resource type="Shader" uid="uid://rsu6gvu83w23" path="res://Assets/Shaders/crt.gdshader" id="18_0pcbe"]
@@ -215,7 +215,8 @@ render_target_update_mode = 4
 
 [node name="Player" parent="GameWorld/SubViewport/Player" instance=ExtResource("1_a02cp")]
 position = Vector2(66.833336, -38.333332)
-GRAVITY = 19.5
+SPEED = 125.0
+JUMP_VELOCITY = 300.0
 
 [node name="Camera2D2" type="Camera2D" parent="GameWorld/SubViewport/Player/Player"]
 position = Vector2(-0.00033569336, 0.00033187866)
