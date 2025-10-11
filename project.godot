@@ -17,16 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Scripts/game_manager.gd"
-GlobalAudioManager="*res://Scripts/global_audio_manager.gd"
+GameManager="*res://Scripts/Globals/game_manager.gd"
+GlobalAudioManager="*res://Scripts/Globals/global_audio_manager.gd"
+Global="*res://Scripts/Globals/global.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
-Global="*res://Scripts/Leaderboard/global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 
