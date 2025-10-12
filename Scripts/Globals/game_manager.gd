@@ -16,7 +16,8 @@ var inviibity_unlocked = false
 
 var dash_shards : int = 0 
 var double_jump_shards : int = 0
-var invisibility_shards : int =0
+var invisibility_shards : int = 0
+var curse_shards : int = 0
 
 var best_time              := 0
 var current_time           := 0
