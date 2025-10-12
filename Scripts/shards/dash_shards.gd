@@ -32,3 +32,9 @@ func _physics_process(delta) -> void:
 				is_collected = true
 				visible = false
 				print("Dash Shards = " + str(GameManager.dash_shards))
+
+func dash_unlock() -> void:
+	if GameManager.dash_shards >= 3:
+		GameManager.dash_unlocked = true
+	else:
+		GameManager.dash_unlocked = false
