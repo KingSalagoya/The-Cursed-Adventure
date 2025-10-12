@@ -4153,6 +4153,18 @@ show_shard = 2
 position = Vector2(163.00002, -73.99999)
 scale = Vector2(0.1, 0.1)
 
+[node name="dash_shards4" parent="." instance=ExtResource("10_p1jxj")]
+position = Vector2(39.000008, -51.000008)
+scale = Vector2(0.1, 0.1)
+
+[node name="dash_shards6" parent="." instance=ExtResource("10_p1jxj")]
+position = Vector2(198, -77)
+scale = Vector2(0.1, 0.1)
+
+[node name="dash_shards5" parent="." instance=ExtResource("10_p1jxj")]
+position = Vector2(125, -75.00001)
+scale = Vector2(0.1, 0.1)
+
 [node name="dash_shards2" parent="." instance=ExtResource("10_p1jxj")]
 position = Vector2(414, -73)
 scale = Vector2(0.1, 0.1)
@@ -4168,5 +4180,5 @@ position = Vector2(278, -69)
 scale = Vector2(0.1, 0.1)
 
 [node name="invisibility_shards" parent="." instance=ExtResource("12_uq5wa")]
-position = Vector2(209.00002, -74)
+position = Vector2(227, -70)
 scale = Vector2(0.1, 0.1)
