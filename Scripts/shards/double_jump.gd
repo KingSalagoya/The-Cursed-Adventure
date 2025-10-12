@@ -32,3 +32,9 @@ func _physics_process(delta) -> void:
 				is_collected = true
 				visible = false
 				print("Double Jump Shards = " + str(GameManager.double_jump_shards))
+
+func double_jump_unlock() -> void:
+	if GameManager.double_jump_shards >= 5:
+		GameManager.double_jump_unlocked = true
+	else:
+		GameManager.double_jump_unlocked = false

@@ -32,3 +32,9 @@ func _physics_process(delta) -> void:
 				is_collected = true
 				visible = false
 				print("Invisibility Shards = " + str(GameManager.invisibility_shards))
+
+func invisibility_jump_unlock() -> void:
+	if GameManager.invisibility_shards >= 5:
+		GameManager.invisibility_unlocked = true
+	else:
+		GameManager.invisibility_unlocked = false
