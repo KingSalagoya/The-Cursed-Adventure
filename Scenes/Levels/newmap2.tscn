@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://cj1dk73jftq84"]
+[gd_scene load_steps=73 format=4 uid="uid://cj1dk73jftq84"]
 
 [ext_resource type="Shader" uid="uid://bldt0xsems8q6" path="res://Assets/Shaders/tilemap_saturation.gdshader" id="1_wrpp0"]
 [ext_resource type="Script" uid="uid://cin2bgtc4auot" path="res://Scripts/wind.gd" id="2_3fi14"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://dcbq6ihncswvm" path="res://Scripts/Systems/debug_hide.gd" id="6_wya7y"]
 [ext_resource type="Script" uid="uid://wowk7ssc8rsu" path="res://Scripts/HiddenAreas/hidden_area_trigger.gd" id="7_te48s"]
 [ext_resource type="Script" uid="uid://csiy7jr17rk78" path="res://Scripts/HiddenAreas/area_trigger_resource.gd" id="8_uveql"]
+[ext_resource type="Resource" uid="uid://mmuomoqbe5xx" path="res://Assets/GraphicsProfile/night_time_graphics_profile.tres" id="9_fcevl"]
+[ext_resource type="Resource" uid="uid://bwl155rx40wrr" path="res://Assets/GraphicsProfile/default_graphics_profile.tres" id="10_p1jxj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qobs0"]
 shader = ExtResource("1_wrpp0")
@@ -4009,7 +4011,6 @@ metadata/_custom_type_script = "uid://888yv4myfetq"
 shape = SubResource("CircleShape2D_te48s")
 
 [node name="AreaTriggers" type="Node2D" parent="."]
-visible = false
 script = ExtResource("6_wya7y")
 
 [node name="StartUpperSecret" type="Area2D" parent="AreaTriggers" node_paths=PackedStringArray("TRIGGER_DATA")]
@@ -4019,6 +4020,8 @@ TRIGGER_DATA = {
 NodePath("Polygon2D"): SubResource("Resource_dfti5"),
 NodePath("Polygon2D2"): SubResource("Resource_uveql")
 }
+ENTER_PROFILE = ExtResource("9_fcevl")
+EXIT_PROFILE = ExtResource("10_p1jxj")
 metadata/_custom_type_script = "uid://wowk7ssc8rsu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTriggers/StartUpperSecret"]
@@ -4078,8 +4081,10 @@ script = ExtResource("7_te48s")
 TRIGGER_DATA = {
 NodePath("BridgeTop"): SubResource("Resource_r7s4x")
 }
-NIGHT_MODE = true
-PLAYER_CIRCLE = true
+ENTER_PROFILE = ExtResource("9_fcevl")
+EXIT_PROFILE = ExtResource("10_p1jxj")
+ENTER_IN_RIGHT = true
+ROTATE90_RIGHT = true
 metadata/_custom_type_script = "uid://wowk7ssc8rsu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTriggers/BridgeCrackSecret"]

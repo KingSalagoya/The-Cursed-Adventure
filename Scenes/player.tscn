@@ -345,7 +345,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qqcod"]
 shader = ExtResource("14_h4iuc")
-shader_parameter/radius = 60.00000285
+shader_parameter/radius = 400.000019
 shader_parameter/blur_width = 30.000001425
 shader_parameter/player_center = Vector2(0, 0)
 

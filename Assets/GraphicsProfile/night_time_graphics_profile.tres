@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GraphicsProfile" load_steps=2 format=3 uid="uid://mmuomoqbe5xx"]
+
+[ext_resource type="Script" uid="uid://drqomp3062qif" path="res://Scripts/Systems/graphics_profile_resource.gd" id="1_qyb4e"]
+
+[resource]
+script = ExtResource("1_qyb4e")
+NIGHT_MODE = true
+PLAYER_LIGHT = true
+PLAYER_CIRCLE = true
+metadata/_custom_type_script = "uid://drqomp3062qif"

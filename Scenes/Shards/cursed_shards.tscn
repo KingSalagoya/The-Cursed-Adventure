@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3 uid="uid://cfrkyr31kxoev"]
+
+[ext_resource type="Script" uid="uid://oqkrpf2v1r2" path="res://Scripts/shards/cursed_shards.gd" id="1_8vj2e"]
+[ext_resource type="Texture2D" uid="uid://c3ihm13kuw0h6" path="res://Assets/Shards/ChatGPT Image Oct 10, 2025, 04_46_23 AM.png" id="1_abbay"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vj2e"]
+atlas = ExtResource("1_abbay")
+region = Rect2(0, 0, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdmck"]
+atlas = ExtResource("1_abbay")
+region = Rect2(324, 0, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia6n6"]
+atlas = ExtResource("1_abbay")
+region = Rect2(648, 0, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csvvf"]
+atlas = ExtResource("1_abbay")
+region = Rect2(0, 353, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euvwp"]
+atlas = ExtResource("1_abbay")
+region = Rect2(324, 353, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cvtc"]
+atlas = ExtResource("1_abbay")
+region = Rect2(648, 353, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rtb3"]
+atlas = ExtResource("1_abbay")
+region = Rect2(0, 706, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq4xx"]
+atlas = ExtResource("1_abbay")
+region = Rect2(324, 706, 324, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qkiy"]
+atlas = ExtResource("1_abbay")
+region = Rect2(648, 706, 324, 353)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eh3od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vj2e")
+}],
+"loop": true,
+"name": &"SHARD_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdmck")
+}],
+"loop": true,
+"name": &"SHARD_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia6n6")
+}],
+"loop": true,
+"name": &"SHARD_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csvvf")
+}],
+"loop": true,
+"name": &"SHARD_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euvwp")
+}],
+"loop": true,
+"name": &"SHARD_5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cvtc")
+}],
+"loop": true,
+"name": &"SHARD_6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rtb3")
+}],
+"loop": true,
+"name": &"SHARD_7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq4xx")
+}],
+"loop": true,
+"name": &"SHARD_8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qkiy")
+}],
+"loop": true,
+"name": &"SHARD_9",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vj2e"]
+radius = 134.21252
+
+[node name="Cursed Shards" type="Area2D"]
+script = ExtResource("1_8vj2e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eh3od")
+animation = &"SHARD_6"
+autoplay = "SHARD_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 9)
+shape = SubResource("CircleShape2D_8vj2e")

@@ -138,7 +138,9 @@ func _light_toggle(_toggle: bool) -> void:
 func _iris_update(toggle: bool, radius: float) -> void:
 	iris_effect.visible = toggle
 	var shader : ShaderMaterial = iris_effect.material
-	shader.set_shader_parameter("radius", radius)
+	var tween  : Tween = get_tree().create_tween()
+	tween.tween_property(shader, "shader_parameter/radius", radius, 2)
+	#shader.set_shader_parameter("radius", radius)
 
 
 func _update_screen_pos() -> void:
