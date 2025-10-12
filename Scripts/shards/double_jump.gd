@@ -31,10 +31,10 @@ func _physics_process(delta) -> void:
 				GameManager.double_jump_shards += 1
 				if GameManager.double_jump_shards >= 5:
 					GameManager.double_jump_unlocked = true
-					$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label2".text = "5/5"
+					$"../../../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label2".text = "5/5"
 				else:
 					GameManager.dash_unlocked = false
-					$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label2".text = ":   " + str(GameManager.double_jump_shards) + "/5"
+					$"../../../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label2".text = ":   " + str(GameManager.double_jump_shards) + "/5"
 				is_collected = true
 				visible = false
 				print("Double Jump Shards = " + str(GameManager.double_jump_shards))
