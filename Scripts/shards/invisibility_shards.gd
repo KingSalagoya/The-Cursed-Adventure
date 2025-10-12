@@ -29,7 +29,12 @@ func _physics_process(delta) -> void:
 			
 			if distance_to_player <= 5:
 				GameManager.invisibility_shards += 1
-				$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label".text = ":   " + str(GameManager.invisibility_shards) + "/3"
+				if GameManager.invisibility_shards >= 5:
+					GameManager.invisibity_unlocked = true
+					$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label".text = "5/5"
+				else:
+					GameManager.invisibity_unlocked = false
+					$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label".text = ":   " + str(GameManager.invisibility_shards) + "/5"
 				is_collected = true
 				visible = false
 				print("Invisibility Shards = " + str(GameManager.invisibility_shards))
