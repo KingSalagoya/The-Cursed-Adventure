@@ -2,10 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://dwwtn57dghkmg" path="res://Assets/Fonts/BoldPixels.otf" id="1_k1vlg"]
 [ext_resource type="Script" uid="uid://bv8jlt4k4abbu" path="res://Scripts/Systems/inventory.gd" id="1_sd8fj"]
-[ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/enemies/shadow_step.png" id="2_c5ffv"]
+[ext_resource type="Texture2D" uid="uid://bocl1186qceig" path="res://Assets/Sprites/enemies/shadow_step.png" id="2_c5ffv"]
 [ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/enemies/slash.png" id="3_sd8fj"]
-[ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/enemies/high leap.png" id="4_trvqw"]
-[ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/enemies/fade.png" id="5_aqnmd"]
+[ext_resource type="Texture2D" uid="uid://ba4gii5fumuw" path="res://Assets/Sprites/enemies/high leap.png" id="4_trvqw"]
+[ext_resource type="Texture2D" uid="uid://bk0dknrphlnh" path="res://Assets/Sprites/enemies/fade.png" id="5_aqnmd"]
 [ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="6_c5ffv"]
 
 [node name="Inventory" type="Control"]
@@ -56,12 +56,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -441.0714
-offset_top = -169.04765
-offset_right = 18.928589
-offset_bottom = -49.047653
+offset_left = -600.5952
+offset_top = -238.69052
+offset_right = 819.40576
+offset_bottom = 141.30948
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.47618908, 0.47618908)
 
 [node name="SkillUI" type="HBoxContainer" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)

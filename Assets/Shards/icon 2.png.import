@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bocl1186qceig"
-path="res://.godot/imported/shadow_step.png-f5766eb2461605898dd4814cdc38cf6f.ctex"
+uid="uid://ofytpe8dpqci"
+path="res://.godot/imported/icon 2.png-d6db9590fa65481b2bf9d5d1cf7520af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/enemies/shadow_step.png"
-dest_files=["res://.godot/imported/shadow_step.png-f5766eb2461605898dd4814cdc38cf6f.ctex"]
+source_file="res://Assets/Shards/icon 2.png"
+dest_files=["res://.godot/imported/icon 2.png-d6db9590fa65481b2bf9d5d1cf7520af.ctex"]
 
 [params]
 

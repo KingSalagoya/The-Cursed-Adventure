@@ -29,6 +29,7 @@ func _physics_process(delta) -> void:
 			
 			if distance_to_player <= 5:
 				GameManager.double_jump_shards += 1
+				$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label2".text = ":   " + str(GameManager.double_jump_shards) + "/3"
 				is_collected = true
 				visible = false
 				print("Double Jump Shards = " + str(GameManager.double_jump_shards))

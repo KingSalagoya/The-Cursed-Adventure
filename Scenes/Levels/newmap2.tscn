@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://cj1dk73jftq84"]
+[gd_scene load_steps=75 format=4 uid="uid://cj1dk73jftq84"]
 
 [ext_resource type="Shader" uid="uid://bldt0xsems8q6" path="res://Assets/Shaders/tilemap_saturation.gdshader" id="1_wrpp0"]
 [ext_resource type="Script" uid="uid://cin2bgtc4auot" path="res://Scripts/wind.gd" id="2_3fi14"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://csiy7jr17rk78" path="res://Scripts/HiddenAreas/area_trigger_resource.gd" id="8_uveql"]
 [ext_resource type="PackedScene" uid="uid://cfrkyr31kxoev" path="res://Scenes/Shards/cursed_shards.tscn" id="9_fcevl"]
 [ext_resource type="PackedScene" uid="uid://3o5063i3llto" path="res://Scenes/Shards/dash_shards.tscn" id="10_p1jxj"]
+[ext_resource type="PackedScene" uid="uid://chp7ue8tom2vf" path="res://Scenes/Shards/double_jump_shards.tscn" id="11_r7s4x"]
+[ext_resource type="PackedScene" uid="uid://bw1guglmir33o" path="res://Scenes/Shards/invisibility_shards.tscn" id="12_uq5wa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qobs0"]
 shader = ExtResource("1_wrpp0")
@@ -4128,27 +4130,27 @@ zoom = Vector2(3, 3)
 [node name="Curse Shards" type="Node" parent="."]
 
 [node name="Cursed Shards" parent="Curse Shards" instance=ExtResource("9_fcevl")]
-position = Vector2(278, -75)
+position = Vector2(267, -117)
 rotation = -3.1415927
 scale = Vector2(0.080000006, 0.080000006)
 show_shard = 3
 
 [node name="Cursed Shards2" parent="Curse Shards" instance=ExtResource("9_fcevl")]
-position = Vector2(132, -73)
+position = Vector2(112, -122)
 scale = Vector2(0.1, 0.1)
 show_shard = 1
 
 [node name="Cursed Shards3" parent="Curse Shards" instance=ExtResource("9_fcevl")]
-position = Vector2(178, -72)
+position = Vector2(153, -129)
 scale = Vector2(0.1, 0.1)
 
 [node name="Cursed Shards4" parent="Curse Shards" instance=ExtResource("9_fcevl")]
-position = Vector2(217, -70)
+position = Vector2(199, -127)
 scale = Vector2(0.1, 0.1)
 show_shard = 2
 
 [node name="dash_shards" parent="." instance=ExtResource("10_p1jxj")]
-position = Vector2(359, -61.999996)
+position = Vector2(163.00002, -73.99999)
 scale = Vector2(0.1, 0.1)
 
 [node name="dash_shards2" parent="." instance=ExtResource("10_p1jxj")]
@@ -4160,3 +4162,11 @@ show_shard = 1
 position = Vector2(529, -54)
 scale = Vector2(0.1, 0.1)
 show_shard = 2
+
+[node name="double_jump_shards" parent="." instance=ExtResource("11_r7s4x")]
+position = Vector2(278, -69)
+scale = Vector2(0.1, 0.1)
+
+[node name="invisibility_shards" parent="." instance=ExtResource("12_uq5wa")]
+position = Vector2(209.00002, -74)
+scale = Vector2(0.1, 0.1)
