@@ -1,14 +1,16 @@
-[gd_scene load_steps=31 format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=33 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Script" uid="uid://cl4ppvto10j64" path="res://Scripts/Systems/world.gd" id="1_ikia7"]
 [ext_resource type="AudioStream" uid="uid://42vaoa6tub2j" path="res://Assets/Sounds/SacrificeAdventure_FULL_SONG_MusicGPT.mp3" id="2_7yui6"]
 [ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="3_5a7ea"]
 [ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/Systems/skill_ui.gd" id="4_k7acu"]
-[ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/enemies/high leap.png" id="4_o06y3"]
-[ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/enemies/shadow_step.png" id="5_k7acu"]
+[ext_resource type="Texture2D" uid="uid://ba4gii5fumuw" path="res://Assets/Sprites/enemies/high leap.png" id="4_o06y3"]
+[ext_resource type="Texture2D" uid="uid://bocl1186qceig" path="res://Assets/Sprites/enemies/shadow_step.png" id="5_k7acu"]
 [ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/Levels/newmap2.tscn" id="5_t2t4p"]
-[ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/enemies/fade.png" id="6_5v1tr"]
+[ext_resource type="Texture2D" uid="uid://bk0dknrphlnh" path="res://Assets/Sprites/enemies/fade.png" id="6_5v1tr"]
+[ext_resource type="Script" uid="uid://hghm6wx3k23j" path="res://Scenes/Levels/hud.gd" id="6_46y6x"]
+[ext_resource type="PackedScene" uid="uid://blrf1mfece82n" path="res://Scenes/inventory.tscn" id="6_aum8j"]
 [ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/enemies/slash.png" id="6_k7acu"]
 [ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
 [ext_resource type="Script" uid="uid://dwevmyss2qvjo" path="res://Scripts/UI/main_menu.gd" id="13_axeuq"]
@@ -236,6 +238,9 @@ process_material = SubResource("ParticleProcessMaterial_t2t4p")
 
 [node name="newmap" parent="GameWorld/SubViewport/Scenes" instance=ExtResource("5_t2t4p")]
 
+[node name="Inventory" parent="GameWorld/SubViewport/Scenes" instance=ExtResource("6_aum8j")]
+visible = false
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -245,6 +250,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HUD" type="CanvasLayer" parent="UI"]
+script = ExtResource("6_46y6x")
 
 [node name="Main" type="Control" parent="UI/HUD"]
 layout_mode = 3
@@ -270,32 +276,35 @@ theme_override_constants/margin_bottom = 100
 [node name="Control" type="Control" parent="UI/HUD/Main/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD/Main/MarginContainer/Control"]
+[node name="Skills" type="VBoxContainer" parent="UI/HUD/Main/MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -271.99988
+offset_top = -157.0
+offset_right = 818.0
+offset_bottom = 347.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.33243096, 0.33243096)
 
-[node name="SkillUI" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer"]
+[node name="SkillUI" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Control/Skills"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 script = ExtResource("4_k7acu")
 
-[node name="ShadowStep" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI"]
+[node name="ShadowStep" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/Skills/SkillUI"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture_normal = ExtResource("5_k7acu")
 stretch_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI/ShadowStep"]
+[node name="TextureRect" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/Skills/SkillUI/ShadowStep"]
 custom_minimum_size = Vector2(240, 240)
 layout_mode = 1
 anchors_preset = 15
@@ -306,13 +315,13 @@ grow_vertical = 2
 texture = ExtResource("6_k7acu")
 expand_mode = 1
 
-[node name="HighLeap" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI"]
+[node name="HighLeap" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/Skills/SkillUI"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture_normal = ExtResource("4_o06y3")
 stretch_mode = 0
 
-[node name="TextureRect2" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI/HighLeap"]
+[node name="TextureRect2" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/Skills/SkillUI/HighLeap"]
 custom_minimum_size = Vector2(240, 240)
 layout_mode = 1
 anchors_preset = 15
@@ -323,13 +332,13 @@ grow_vertical = 2
 texture = ExtResource("6_k7acu")
 expand_mode = 1
 
-[node name="Fade" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI"]
+[node name="Fade" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/Skills/SkillUI"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture_normal = ExtResource("6_5v1tr")
 stretch_mode = 0
 
-[node name="TextureRect3" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI/Fade"]
+[node name="TextureRect3" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/Skills/SkillUI/Fade"]
 custom_minimum_size = Vector2(240, 240)
 layout_mode = 1
 anchors_preset = 15
@@ -340,15 +349,58 @@ grow_vertical = 2
 texture = ExtResource("6_k7acu")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer"]
+[node name="Label" type="Label" parent="UI/HUD/Main/MarginContainer/Control/Skills"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("10_0fj1v")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 71
 text = "Press D to Dash"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Progress" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Control"]
+layout_mode = 1
+offset_right = 1706.0
+offset_bottom = 74.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="UI/HUD/Main/MarginContainer/Control/Progress"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Invisibility Shards"
+
+[node name="Label2" type="Label" parent="UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Double Jump Shards"
+
+[node name="Label3" type="Label" parent="UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Dash Shards"
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="UI/HUD/Main/MarginContainer/Control/Progress"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":  0/5"
+
+[node name="Label2" type="Label" parent="UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":  0/5"
+
+[node name="Label3" type="Label" parent="UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":  0/3"
 
 [node name="Timer" type="Control" parent="UI/HUD/Main/MarginContainer"]
 layout_mode = 2

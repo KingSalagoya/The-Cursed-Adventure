@@ -29,6 +29,7 @@ func _physics_process(delta) -> void:
 			
 			if distance_to_player <= 5:
 				GameManager.dash_shards += 1
+				$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label3".text = ":   " + str(GameManager.dash_shards) + "/3"
 				is_collected = true
 				visible = false
 				print("Dash Shards = " + str(GameManager.dash_shards))

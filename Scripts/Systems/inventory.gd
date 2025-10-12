@@ -21,11 +21,11 @@ func _ready() -> void:
 	else:
 		$Control/VBoxContainer/SkillUI/HighLeap/TextureRect2.visible = true
 	
-	if GameManager.inviibity_unlocked == true:
+	if GameManager.invisibity_unlocked == true:
 		$Control/VBoxContainer/SkillUI/Fade/TextureRect3.visible = false
 	else:
 		$Control/VBoxContainer/SkillUI/Fade/TextureRect3.visible = true
-	
+
 
 #hover
 
