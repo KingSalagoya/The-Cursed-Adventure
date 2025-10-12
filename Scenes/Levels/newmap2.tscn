@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://cj1dk73jftq84"]
+[gd_scene load_steps=73 format=4 uid="uid://cj1dk73jftq84"]
 
 [ext_resource type="Shader" uid="uid://bldt0xsems8q6" path="res://Assets/Shaders/tilemap_saturation.gdshader" id="1_wrpp0"]
 [ext_resource type="Script" uid="uid://cin2bgtc4auot" path="res://Scripts/wind.gd" id="2_3fi14"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://dcbq6ihncswvm" path="res://Scripts/Systems/debug_hide.gd" id="6_wya7y"]
 [ext_resource type="Script" uid="uid://wowk7ssc8rsu" path="res://Scripts/HiddenAreas/hidden_area_trigger.gd" id="7_te48s"]
 [ext_resource type="Script" uid="uid://csiy7jr17rk78" path="res://Scripts/HiddenAreas/area_trigger_resource.gd" id="8_uveql"]
+[ext_resource type="PackedScene" uid="uid://cfrkyr31kxoev" path="res://Scenes/Shards/cursed_shards.tscn" id="9_fcevl"]
+[ext_resource type="PackedScene" uid="uid://3o5063i3llto" path="res://Scenes/Shards/dash_shards.tscn" id="10_p1jxj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qobs0"]
 shader = ExtResource("1_wrpp0")
@@ -4120,3 +4122,41 @@ polygon = PackedVector2Array(-8, -24, 104, -24, 104, 96, -8, 96)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(280, -112)
 zoom = Vector2(3, 3)
+
+[node name="Dash Shards" type="Node2D" parent="."]
+
+[node name="Curse Shards" type="Node" parent="."]
+
+[node name="Cursed Shards" parent="Curse Shards" instance=ExtResource("9_fcevl")]
+position = Vector2(278, -75)
+rotation = -3.1415927
+scale = Vector2(0.080000006, 0.080000006)
+show_shard = 3
+
+[node name="Cursed Shards2" parent="Curse Shards" instance=ExtResource("9_fcevl")]
+position = Vector2(132, -73)
+scale = Vector2(0.1, 0.1)
+show_shard = 1
+
+[node name="Cursed Shards3" parent="Curse Shards" instance=ExtResource("9_fcevl")]
+position = Vector2(178, -72)
+scale = Vector2(0.1, 0.1)
+
+[node name="Cursed Shards4" parent="Curse Shards" instance=ExtResource("9_fcevl")]
+position = Vector2(217, -70)
+scale = Vector2(0.1, 0.1)
+show_shard = 2
+
+[node name="dash_shards" parent="." instance=ExtResource("10_p1jxj")]
+position = Vector2(359, -61.999996)
+scale = Vector2(0.1, 0.1)
+
+[node name="dash_shards2" parent="." instance=ExtResource("10_p1jxj")]
+position = Vector2(414, -73)
+scale = Vector2(0.1, 0.1)
+show_shard = 1
+
+[node name="dash_shards3" parent="." instance=ExtResource("10_p1jxj")]
+position = Vector2(529, -54)
+scale = Vector2(0.1, 0.1)
+show_shard = 2
