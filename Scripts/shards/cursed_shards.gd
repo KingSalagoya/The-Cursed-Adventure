@@ -8,7 +8,7 @@ var is_collected : bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 enum shard {SHARD_1, SHARD_2, SHARD_3, SHARD_4, SHARD_5, SHARD_6, SHARD_7, SHARD_8, SHARD_9}
 
-@export var show_shard : shard = shard.SHARD_1
+@export var show_shard : shard = shard.SHARD_6
 
 func _ready() -> void:
 	if home_position == Vector2.ZERO:
