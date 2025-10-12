@@ -7,17 +7,16 @@ signal win_sequence ()
 
 signal night_mode (toggle: bool)
 signal player_light_toggle(toggle: bool)
-signal player_iris_update(toggle: bool, radius: float)
+signal player_iris_update(toggle: bool, radius: float, duration: float)
 
 #skill progress
 var dash_unlocked = false
 var double_jump_unlocked = false
-var invisibity_unlocked = false
+var inviibity_unlocked = false
 
 var dash_shards : int = 0 
 var double_jump_shards : int = 0
-var invisibility_shards : int = 0
-var curse_shards : int = 0
+var invisibility_shards : int =0
 
 var best_time              := 0
 var current_time           := 0

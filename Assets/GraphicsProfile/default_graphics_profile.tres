@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GraphicsProfile" load_steps=2 format=3 uid="uid://bwl155rx40wrr"]
+
+[ext_resource type="Script" uid="uid://drqomp3062qif" path="res://Scripts/Systems/graphics_profile_resource.gd" id="1_8fsxm"]
+
+[resource]
+script = ExtResource("1_8fsxm")
+PLAYER_CIRCLE_RADIUS = 400
+metadata/_custom_type_script = "uid://drqomp3062qif"
