@@ -31,13 +31,16 @@ func _physics_process(delta) -> void:
 				GameManager.dash_shards += 1
 				if GameManager.dash_shards >= 3:
 					GameManager.dash_unlocked = true
-					$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label3".text = "3/3"
+					$"../../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label3".text = "3/3"
+					is_collected = true
+					visible = false
+					print("Dash Shards = " + str(GameManager.dash_shards))
 				else:
 					GameManager.dash_unlocked = false
-					$"../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label3".text = ":   " + str(GameManager.dash_shards) + "/3"
-				is_collected = true
-				visible = false
-				print("Dash Shards = " + str(GameManager.dash_shards))
+					$"../../../../../../UI/HUD/Main/MarginContainer/Control/Progress/HBoxContainer2/Label3".text = ":   " + str(GameManager.dash_shards) + "/3"
+					is_collected = true
+					visible = false
+					print("Dash Shards = " + str(GameManager.dash_shards))
 
 func dash_unlock() -> void:
 	if GameManager.dash_shards >= 3:
