@@ -1,6 +1,7 @@
 extends Node
 
-signal sacrifice_skill (name: String)
+signal sacrifice_skill(name: String)
+signal skill_unlock(name: String)
 signal toggle_hud (toggle: bool)
 signal start_game ()
 signal win_sequence ()
@@ -13,10 +14,12 @@ signal player_iris_update(toggle: bool, radius: float, duration: float)
 var dash_unlocked = false
 var double_jump_unlocked = false
 var inviibity_unlocked = false
+var skill_ui: Control
 
-var dash_shards : int = 0 
-var double_jump_shards : int = 0
-var invisibility_shards : int =0
+var shards: int = 0
+var shards_text: Label
+
+var info_label: Label
 
 var best_time              := 0
 var current_time           := 0
@@ -66,7 +69,17 @@ func load_game() -> void:
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
+	if shards >=  7:
+		info_label.text = "You Have Now Acces to every ability!"
 
+func _unhandled_input(event: InputEvent) -> void:
+	if shards < 7: return
+	if event.is_action_pressed("num1"):
+		GameManager.skill_ui.enable_shadow_step()
+	elif event.is_action_pressed("num2"):
+		GameManager.skill_ui.enable_high_leap()
+	elif event.is_action_pressed("num3"):
+		GameManager.skill_ui.enable_fade()
 
 func update_latest_checkpoint(pos: Vector2) -> void:
 	print("CHECKPOINT" + str(pos))
@@ -80,3 +93,7 @@ func _toggle_hud(toggle: bool) -> void:
 func win_game() -> void:
 	_toggle_hud(true)
 	win_sequence.emit()
+
+func update_shard_text() -> void:
+	if shards_text and not shards == 0:
+		shards_text.text = str(shards) + " out of 7"

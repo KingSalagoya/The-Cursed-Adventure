@@ -11,6 +11,7 @@ var tween                   : Tween
 
 
 func use() -> void:
+	if GameManager.dash_unlocked == false: return
 	if not is_dashing and Input.is_action_just_pressed("shadow step"):
 		is_dashing = true
 		player.dash_velocity = DASH_SPEED

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://wvjmbuajs6bt"]
 
-[ext_resource type="Script" uid="uid://dra2inopedpui" path="res://Scripts/Enemy/laser.gd" id="1_e46n8"]
+[ext_resource type="Script" uid="uid://dra2inopedpui" path="res://Scripts/Enemies/laser.gd" id="1_e46n8"]
 [ext_resource type="Texture2D" uid="uid://ddqdw6v8e3pdg" path="res://Assets/Sprites/enemies/laser.png" id="2_dxqmw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e46n8"]
