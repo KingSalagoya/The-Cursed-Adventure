@@ -249,7 +249,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.8044675, 0.029691692, 6.738305e-07, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_tx1dd"]
@@ -292,7 +292,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.02, 0.0024, 0.004746665, 1)]
+"values": [Color(0.9999996, 0.09081326, 0.060731016, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -320,7 +320,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.019607844, 0.003921569, 0.003921569, 1)]
+"values": [Color(1, 0.09019608, 0.05882353, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

@@ -297,13 +297,10 @@ layout_mode = 2
 
 [node name="Text" type="Label" parent="UI/HUD/Main/MarginContainer/InfoBar"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -63.0
+offset_bottom = 59.0
 grow_horizontal = 2
-grow_vertical = 0
 theme_override_fonts/font = ExtResource("10_0fj1v")
 theme_override_font_sizes/font_size = 48
 text = "Use Arrow Keys to Move"
