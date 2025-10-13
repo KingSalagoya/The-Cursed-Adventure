@@ -7,7 +7,7 @@ func _ready() -> void:
 	player = GameManager.player
 	
 
-func _physics_process(delta) -> void:
+func _physics_process(_delta) -> void:
 	if player:
 		var direction       := player.global_position - global_position
 		var distance_to_player := direction.length()
@@ -19,7 +19,7 @@ func _physics_process(delta) -> void:
 		else:
 			$AnimatedSprite2D.play("idle")
 
-func _visibility_process(delta: float) -> void:
+func _visibility_process(_delta: float) -> void:
 	if $AnimatedSprite2D.is_playing("idle"):
 		$CollisionShape2D.disabled = true
 	else:

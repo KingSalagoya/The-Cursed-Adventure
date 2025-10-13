@@ -103,7 +103,7 @@ func _handle_jump() -> void:
 			velocity += Vector2(0, GRAVITY)
 		else:
 			velocity.y = 0.0
-	elif Input.is_action_pressed("jump") and not hud_toggle:
+	elif Input.is_action_just_pressed("jump") and not hud_toggle:
 		jump_countdown = true
 		jump()
 		var timer = get_tree().create_timer(0.1)

@@ -1,15 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://bj5xm3ygm2bw3"]
+[gd_scene load_steps=27 format=3 uid="uid://bj5xm3ygm2bw3"]
 
 [ext_resource type="PackedScene" uid="uid://dvbpkfbcjyfhy" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Script" uid="uid://cl4ppvto10j64" path="res://Scripts/Systems/world.gd" id="1_ikia7"]
 [ext_resource type="AudioStream" uid="uid://42vaoa6tub2j" path="res://Assets/Sounds/SacrificeAdventure_FULL_SONG_MusicGPT.mp3" id="2_7yui6"]
 [ext_resource type="Script" uid="uid://bcct7y7x74b0n" path="res://Scripts/camera.gd" id="3_5a7ea"]
-[ext_resource type="Script" uid="uid://d4f75v6o4ipd8" path="res://Scripts/Systems/skill_ui.gd" id="4_k7acu"]
-[ext_resource type="Texture2D" uid="uid://bg85yts8svqx" path="res://Assets/Sprites/enemies/high leap.png" id="4_o06y3"]
-[ext_resource type="Texture2D" uid="uid://c4p4fop5by3t2" path="res://Assets/Sprites/enemies/shadow_step.png" id="5_k7acu"]
 [ext_resource type="PackedScene" uid="uid://cj1dk73jftq84" path="res://Scenes/Levels/newmap2.tscn" id="5_t2t4p"]
-[ext_resource type="Texture2D" uid="uid://wbvcm2ktibck" path="res://Assets/Sprites/enemies/fade.png" id="6_5v1tr"]
-[ext_resource type="Texture2D" uid="uid://wqixurj5uai5" path="res://Assets/Sprites/enemies/slash.png" id="6_k7acu"]
 [ext_resource type="FontFile" uid="uid://dnnfaywe1qdr5" path="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="10_0fj1v"]
 [ext_resource type="Script" uid="uid://dwevmyss2qvjo" path="res://Scripts/UI/main_menu.gd" id="13_axeuq"]
 [ext_resource type="Texture2D" uid="uid://b5tj0h51utb0l" path="res://Assets/Sprites/image.png" id="13_kn0ld"]
@@ -18,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://rcpoj4ygjmwu" path="res://Assets/Shaders/film_grain.gdshader" id="16_hgpy0"]
 [ext_resource type="Shader" uid="uid://b3jnx5o0y68py" path="res://Assets/Shaders/vignete.gdshader" id="16_t2t4p"]
 [ext_resource type="Shader" uid="uid://rsu6gvu83w23" path="res://Assets/Shaders/crt.gdshader" id="18_0pcbe"]
+[ext_resource type="PackedScene" uid="uid://tok75htp41bk" path="res://Scenes/UI/skill_ui.tscn" id="19_46y6x"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t2t4p"]
 lifetime_randomness = 1.0
@@ -265,90 +261,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 150
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 150
-theme_override_constants/margin_bottom = 100
-
-[node name="Control" type="Control" parent="UI/HUD/Main/MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD/Main/MarginContainer/Control"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="SkillUI" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer"]
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-theme_override_constants/separation = 50
-alignment = 1
-script = ExtResource("4_k7acu")
-
-[node name="ShadowStep" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI"]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-texture_normal = ExtResource("5_k7acu")
-stretch_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI/ShadowStep"]
-custom_minimum_size = Vector2(240, 240)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_k7acu")
-expand_mode = 1
-
-[node name="HighLeap" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI"]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-texture_normal = ExtResource("4_o06y3")
-stretch_mode = 0
-
-[node name="TextureRect2" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI/HighLeap"]
-custom_minimum_size = Vector2(240, 240)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_k7acu")
-expand_mode = 1
-
-[node name="Fade" type="TextureButton" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI"]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-texture_normal = ExtResource("6_5v1tr")
-stretch_mode = 0
-
-[node name="TextureRect3" type="TextureRect" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer/SkillUI/Fade"]
-custom_minimum_size = Vector2(240, 240)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_k7acu")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="UI/HUD/Main/MarginContainer/Control/VBoxContainer"]
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("10_0fj1v")
-theme_override_font_sizes/font_size = 42
-text = "Press D to Dash"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+theme_override_constants/margin_bottom = 50
 
 [node name="Timer" type="Control" parent="UI/HUD/Main/MarginContainer"]
 layout_mode = 2
@@ -356,19 +269,46 @@ layout_mode = 2
 [node name="Timer" type="Timer" parent="UI/HUD/Main/MarginContainer/Timer"]
 process_callback = 0
 
-[node name="TimerContainer" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Timer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD/Main/MarginContainer/Timer"]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_constants/separation = 1200
-alignment = 1
+grow_vertical = 2
 
-[node name="TimerLabel" type="Label" parent="UI/HUD/Main/MarginContainer/Timer/TimerContainer"]
+[node name="TimerContainer" type="HBoxContainer" parent="UI/HUD/Main/MarginContainer/Timer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1200
+
+[node name="TimerLabel" type="Label" parent="UI/HUD/Main/MarginContainer/Timer/VBoxContainer/TimerContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("10_0fj1v")
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 48
 text = "Time : "
+
+[node name="ShardText" type="Label" parent="UI/HUD/Main/MarginContainer/Timer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_0fj1v")
+theme_override_font_sizes/font_size = 48
+
+[node name="InfoBar" type="Control" parent="UI/HUD/Main/MarginContainer"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="UI/HUD/Main/MarginContainer/InfoBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("10_0fj1v")
+theme_override_font_sizes/font_size = 48
+text = "Use Arrow Keys to Move"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="MainMenu" type="CanvasLayer" parent="UI"]
 visible = false
@@ -540,6 +480,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 6
+
+[node name="SubViewport" type="SubViewport" parent="GameUI/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="SkillUI" parent="GameUI/SubViewportContainer/SubViewport" instance=ExtResource("19_46y6x")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hgpy0")

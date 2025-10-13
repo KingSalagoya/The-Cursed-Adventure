@@ -10,6 +10,7 @@ class_name Fade extends Skills
 var used                       := false
 
 func use() -> void:
+	if GameManager.inviibity_unlocked == false: return
 	if Input.is_action_just_pressed("fade") and not used:
 		invinsibility()
 		cooldown()

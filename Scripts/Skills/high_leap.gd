@@ -6,6 +6,7 @@ class_name HighLeap extends Skills
 var jumped                  := false
 
 func use() -> void:
+	if GameManager.double_jump_unlocked == false: return
 	if Input.is_action_just_pressed("jump") and not player.is_on_floor() and not jumped and not player.jump_countdown:
 		jumped = true
 		player.jump()
